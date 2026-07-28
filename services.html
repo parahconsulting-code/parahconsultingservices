@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nos Services - PARAH Consulting</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: { "on-secondary-fixed":"#341100","primary-fixed-dim":"#bec6e0","error":"#ba1a1a","surface-container":"#eceef0","outline-variant":"#c6c6cd","on-tertiary-fixed":"#001e2f","surface-container-low":"#f2f4f6","on-secondary":"#ffffff","on-surface":"#191c1e","on-tertiary":"#ffffff","surface-container-lowest":"#ffffff","tertiary":"#000000","primary-container":"#131b2e","surface-container-high":"#e6e8ea","on-secondary-fixed-variant":"#783200","primary":"#000000","secondary":"#9d4300","secondary-fixed":"#ffdbca","surface-dim":"#d8dadc","on-error-container":"#93000a","tertiary-container":"#001e2f","on-secondary-container":"#5c2400","primary-fixed":"#dae2fd","on-surface-variant":"#45464d","tertiary-fixed":"#c9e6ff","surface-tint":"#565e74","surface-container-highest":"#e0e3e5","surface-bright":"#f7f9fb","inverse-on-surface":"#eff1f3","background":"#f7f9fb","inverse-primary":"#bec6e0","secondary-container":"#fd761a","error-container":"#ffdad6","on-primary-container":"#7c839b","outline":"#76777d","secondary-fixed-dim":"#ffb690","surface":"#f7f9fb","inverse-surface":"#2d3133","on-primary-fixed-variant":"#3f465c","tertiary-fixed-dim":"#89ceff","on-tertiary-fixed-variant":"#004c6e","surface-variant":"#e0e3e5","on-primary-fixed":"#131b2e","on-tertiary-container":"#008cc7","on-error":"#ffffff","on-background":"#191c1e","on-primary":"#ffffff"
+      },
+      borderRadius: { DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem" },
+      spacing: { "container-max": "1280px", "margin-desktop": "64px", base: "8px", "margin-mobile": "16px", gutter: "24px" },
+      fontFamily: { "body-lg": ["Inter"], "body-md": ["Inter"], "display-lg": ["Montserrat"], "headline-sm": ["Montserrat"], "display-lg-mobile": ["Montserrat"], "headline-md": ["Montserrat"], "label-md": ["Inter"] },
+      fontSize: { "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }], "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }], "display-lg": ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }], "headline-sm": ["24px", { lineHeight: "1.4", fontWeight: "600" }], "display-lg-mobile": ["32px", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700" }], "headline-md": ["30px", { lineHeight: "1.3", fontWeight: "600" }], "label-md": ["14px", { lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "600" }] }
+    },
+  },
+}
+</script>
+<style>
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+.hero-gradient { background: linear-gradient(135deg, #131b2e 0%, #000000 100%); }
+.tonal-card { background-color: #F8FAFC; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+.tonal-card:hover { border-color: #008cc7; box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.05); }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-16 py-4 bg-surface/95 backdrop-blur-md border-b border-outline-variant">
+  <a href="index.html" class="font-display-lg text-2xl md:text-3xl font-bold text-primary">PARAH Consulting</a>
+  <nav class="hidden md:flex items-center gap-8">
+    <a href="index.html" class="font-body-md text-on-surface hover:text-secondary transition-colors duration-200">Accueil</a>
+    <a href="services.html" class="font-body-md text-secondary font-bold border-b-2 border-secondary">Services</a>
+    <a href="formations.html" class="font-body-md text-on-surface hover:text-secondary transition-colors duration-200">Formations</a>
+    <a href="rendez-vous.html" class="font-body-md text-on-surface hover:text-secondary transition-colors duration-200">Rendez-vous</a>
+    <a href="#contact" class="font-body-md text-on-surface hover:text-secondary transition-colors duration-200">Contact</a>
+  </nav>
+  <div class="flex items-center gap-4">
+    <a href="rendez-vous.html" class="bg-primary text-on-primary px-6 py-2 font-label-md scale-95 active:scale-90 transition-transform">Prendre RDV</a>
+  </div>
+</header>
+<main class="pt-24">
+<section class="relative h-[614px] flex items-center overflow-hidden hero-gradient">
+  <div class="absolute inset-0 opacity-40">
+    <div class="w-full h-full" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAfio53OSeymaCfT0ADFApNS1n6VPL5pUdloDydywG_3-trg_kruNcWnhkS1t9MQTlftcuJAWH-Gyln3fcbD4xOWVriD4OcCjfLKuodVumr2q0OaseNKLAbKu_JGa3UQ4r77k6o_DFy_9wcCyyejSIlDTakxbKa2Wcue54y75YlRY-BXCQGzJJZAQWvVGJLymwmXYBBT80l0WMYsQzgiKVUq7XpPndo6Ofg1mlgt11oVGVxTOVtdSRCtZHde9z6XGImXZ6yOyAF5zg')"></div>
+  </div>
+  <div class="relative container mx-auto px-6 md:px-16 z-10">
+    <div class="max-w-3xl">
+      <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-6">Expertise, Fiabilité et Transformation Strategique.</h1>
+      <p class="font-body-lg text-white/80 mb-8 max-w-xl">Nous accompagnons les entreprises et les institutions dans leur quête de performance opérationnelle et de croissance durable à travers trois piliers d'excellence.</p>
+      <a class="inline-flex items-center gap-2 bg-secondary text-white px-8 py-4 font-label-md hover:bg-secondary-container transition-colors" href="#consulting">Découvrir nos solutions <span class="material-symbols-outlined text-sm">arrow_downward</span></a>
+    </div>
+  </div>
+</section>
+<section class="py-24 bg-white border-b border-outline-variant" id="consulting">
+  <div class="container mx-auto px-6 md:px-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <span class="text-secondary font-label-md tracking-widest uppercase mb-4 block">Pilier 01</span>
+        <h2 class="font-display-lg text-headline-md md:text-display-lg text-primary mb-6">Consulting Stratégique</h2>
+        <p class="font-body-lg text-on-surface-variant mb-10">Donnez une direction claire à vos ambitions. Nous transformons vos visions en plans d'actions concrets pour assurer votre compétitivité sur le marché congolais et international.</p>
+        <div class="space-y-6 mb-10">
+          <div class="flex gap-4"><div class="w-12 h-12 bg-primary-container flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary-container">analytics</span></div><div><h4 class="font-headline-sm text-lg text-primary">Diagnostic & Audit</h4><p class="text-on-surface-variant">Analyse approfondie de votre structure pour identifier les leviers de croissance cachés.</p></div></div>
+          <div class="flex gap-4"><div class="w-12 h-12 bg-primary-container flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary-container">business_center</span></div><div><h4 class="font-headline-sm text-lg text-primary">Business Plan & Modélisation</h4><p class="text-on-surface-variant">Conception de stratégies robustes et de prévisions financières pour vos investissements.</p></div></div>
+          <div class="flex gap-4"><div class="w-12 h-12 bg-primary-container flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary-container">digital_wellbeing</span></div><div><h4 class="font-headline-sm text-lg text-primary">Transformation Digitale</h4><p class="text-on-surface-variant">Accompagnement dans l'adoption d'outils numériques pour optimiser vos processus.</p></div></div>
+        </div>
+        <a href="rendez-vous.html" class="bg-primary text-on-primary px-8 py-4 font-label-md hover:opacity-90 transition-all inline-block">Demander un devis</a>
+      </div>
+      <div class="relative aspect-square">
+        <div class="absolute inset-0 border border-outline-variant transform translate-x-4 translate-y-4"></div>
+        <div class="relative w-full h-full overflow-hidden grayscale hover:grayscale-0 transition-all duration-700" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBUD-QjPl2uQZEorJruHZoshJg__y5B9FQqrq1RUClDfGwlr4lH23NKRrMhzJZszo43FJabVamJyrNv7AH2rXuuWLgqv5pqHjW_tYyLRLHxGFfwKX9S37HQFqLH0F1zG-04c5GFc4-klSDJ9GiSk9ZPv2Q9YUZmV0SJ4PN6MxREErso4KU4_cSV8_6bVydCAicut59QESJWukmyUmuERuXNuykCdtpneRoV6_Tihenetd0aLVWKtIGUCbM6Xy2RG9tp1c0BuSGqakU')"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="py-24 bg-surface-bright" id="operationnel">
+  <div class="container mx-auto px-6 md:px-16">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-secondary font-label-md tracking-widest uppercase mb-4 block">Pilier 02</span>
+      <h2 class="font-display-lg text-headline-md md:text-display-lg text-primary mb-4">Services Opérationnels</h2>
+      <p class="font-body-lg text-on-surface-variant">Optimisez votre chaîne de valeur et sécurisez vos approvisionnements grâce à notre expertise logistique et commerciale.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+      <div class="tonal-card p-8 border border-outline-variant flex flex-col h-full">
+        <span class="material-symbols-outlined text-4xl text-secondary mb-6">search_insights</span>
+        <h3 class="font-headline-sm mb-4">Sourcing & Achats</h3>
+        <p class="text-on-surface-variant mb-8 flex-grow">Identification de fournisseurs fiables et négociation des meilleures conditions tarifaires pour vos intrants.</p>
+        <ul class="space-y-3 mb-8"><li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Audit fournisseurs</li><li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Optimisation des coûts</li></ul>
+      </div>
+      <div class="tonal-card p-8 border border-outline-variant flex flex-col h-full">
+        <span class="material-symbols-outlined text-4xl text-secondary mb-6">hub</span>
+        <h3 class="font-headline-sm mb-4">Centrale d'Achats</h3>
+        <p class="text-on-surface-variant mb-8 flex-grow">Mutualisation des commandes pour bénéficier d'économies d'échelle significatives et d'une logistique simplifiée.</p>
+        <ul class="space-y-3 mb-8"><li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Gestion des stocks</li><li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Consolidation logistique</li></ul>
+      </div>
+      <div class="tonal-card p-8 border border-outline-variant flex flex-col h-full">
+        <span class="material-symbols-outlined text-4xl text-secondary mb-6">public</span>
+        <h3 class="font-headline-sm mb-4">Import / Export</h3>
+        <p class="text-on-surface-variant mb-8 flex-grow">Gestion complète des formalités douanières et du transit international pour vos marchandises.</p>
+        <ul class="space-y-3 mb-8"><li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Conformité douanière</li><li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Suivi d'expédition</li></ul>
+      </div>
+    </div>
+    <div class="mt-16 text-center">
+      <a href="rendez-vous.html" class="bg-primary text-on-primary px-8 py-4 font-label-md hover:bg-on-surface transition-all inline-block">Demander un devis opérationnel</a>
+    </div>
+  </div>
+</section>
+<section class="py-24 bg-primary text-on-primary" id="humain">
+  <div class="container mx-auto px-6 md:px-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+      <div class="lg:col-span-5">
+        <span class="text-secondary-fixed-dim font-label-md tracking-widest uppercase mb-4 block">Pilier 03</span>
+        <h2 class="font-display-lg text-headline-md md:text-display-lg mb-6">Capital Humain</h2>
+        <p class="font-body-lg text-on-primary-container mb-10">L'humain est le moteur de votre croissance. Nous formons les leaders de demain et optimisons le potentiel de vos équipes.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10">
+          <div><h4 class="font-headline-sm text-lg mb-2 text-white">Orientation</h4><p class="text-sm text-on-primary-container">Guidage stratégique pour les carrières et les transitions professionnelles.</p></div>
+          <div><h4 class="font-headline-sm text-lg mb-2 text-white">Formations</h4><p class="text-sm text-on-primary-container">Programmes sur mesure pour renforcer les compétences techniques et managériales.</p></div>
+          <div><h4 class="font-headline-sm text-lg mb-2 text-white">Coaching</h4><p class="text-sm text-on-primary-container">Accompagnement individuel ou collectif pour libérer le leadership.</p></div>
+          <div><h4 class="font-headline-sm text-lg mb-2 text-white">RH Management</h4><p class="text-sm text-on-primary-container">Externalisation et conseil pour une gestion RH moderne et efficace.</p></div>
+        </div>
+        <a href="formations.html" class="bg-secondary text-white px-8 py-4 font-label-md hover:bg-secondary-container transition-all inline-block">Démarrer un programme</a>
+      </div>
+      <div class="lg:col-span-7 grid grid-cols-2 gap-4">
+        <div class="space-y-4 pt-12">
+          <div class="aspect-[3/4] w-full overflow-hidden" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBqTUaxmc1mQ714A5T9L74r5aM3C7IF3sMVb3LONPF7-nBUDc62VG3hz7-zPoucBPrFxbAoc5YESJcP_5zNDkU7cb97oUrHpEqSZhkyt7qHNt_Fi0sOfj6Fwv2JY_g8AVxnMHLGG7a6vdraAJDiJVFzrR0urTSJvWxfImEUapOiXoeFXuvi7MmhF3Bk8ICV1I12D95TerEoEuV8QcM-HXRhaYWWILL6GQ_EAoOPxYpHAib_-ZoQf02y7a8-DY6d9rYESaAo10YFSaU')"></div>
+          <div class="bg-secondary p-6 aspect-square flex flex-col justify-end"><p class="font-display-lg text-4xl">+500</p><p class="font-label-md">Professionnels Formés</p></div>
+        </div>
+        <div class="space-y-4">
+          <div class="bg-on-primary-container/20 p-6 aspect-square flex flex-col justify-end border border-white/10"><p class="font-display-lg text-4xl">15+</p><p class="font-label-md">Programmes Experts</p></div>
+          <div class="aspect-[3/4] w-full overflow-hidden" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAXUC2Qn43cizBySPzsss_6uJXQd0OT-vJUmeNjGwMtaxBYnVK3NJK65w3EIXbAEWu0xjV9AOcQ26DPszXAox_yeV4SZFt8_QIhuBOMBOi-lqjswEVBSWsAsv3w7ur-xF2Khn6kc9YswmZtRQxu_1_-7ZRR0BOQW61rEVkkAefGja2QwKxTI8s93T6iAw8AXRbNECCKv2Q4k433kFnOPtryJBPrPklF-G6U2FYT3hk_WiTqwB3ROLbedivJ2djUqodPy-5taRkt3f8')"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="py-24 bg-surface">
+  <div class="container mx-auto px-6 md:px-16">
+    <div class="bg-white border border-outline-variant p-12 md:p-20 text-center relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-1 h-full bg-secondary"></div>
+      <h2 class="font-display-lg text-headline-md mb-6">Prêt à transformer votre activité ?</h2>
+      <p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">Nos experts sont à votre disposition pour analyser vos besoins et vous proposer des solutions personnalisées adaptées à votre réalité locale.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="rendez-vous.html" class="bg-primary text-on-primary px-10 py-5 font-label-md hover:opacity-90 transition-all">Obtenir un devis personnalisé</a>
+        <a href="index.html" class="border border-primary text-primary px-10 py-5 font-label-md hover:bg-primary hover:text-on-primary transition-all">Consulter notre Blog</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="bg-primary-container py-16 px-6 md:px-16 grid grid-cols-1 md:grid-cols-4 gap-gutter text-on-primary-container">
+  <div class="col-span-1 md:col-span-1">
+    <h2 class="font-headline-sm text-on-primary-container font-bold mb-6">PARAH Consulting</h2>
+    <p class="font-body-md opacity-80 mb-6">Votre partenaire stratégique pour l'excellence opérationnelle et humaine en Afrique Centrale.</p>
+    <div class="flex gap-4">
+      <a class="w-10 h-10 border border-on-primary-container/20 flex items-center justify-center hover:bg-secondary transition-colors" href="#"><span class="material-symbols-outlined text-sm">public</span></a>
+      <a class="w-10 h-10 border border-on-primary-container/20 flex items-center justify-center hover:bg-secondary transition-colors" href="#"><span class="material-symbols-outlined text-sm">mail</span></a>
+    </div>
+  </div>
+  <div>
+    <h4 class="font-label-md uppercase tracking-widest text-white mb-6">Expertise</h4>
+    <ul class="space-y-4 font-body-md">
+      <li><a class="opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-opacity" href="services.html">Audit Stratégique</a></li>
+      <li><a class="opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-opacity" href="services.html">Sourcing International</a></li>
+      <li><a class="opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-opacity" href="formations.html">Formation Continue</a></li>
+      <li><a class="opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-opacity" href="services.html">Coaching Dirigeant</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4 class="font-label-md uppercase tracking-widest text-white mb-6">Entreprise</h4>
+    <ul class="space-y-4 font-body-md">
+      <li><a class="opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-opacity" href="#">À Propos</a></li>
+      <li><a class="opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-opacity" href="#">Blog & Actualités</a></li>
+      <li><a class="opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-opacity" href="#">Carrières</a></li>
+      <li><a class="opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-opacity" href="#">FAQ</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4 class="font-label-md uppercase tracking-widest text-white mb-6">Contact</h4>
+    <p class="font-body-md opacity-80 mb-4">Brazzaville, République du Congo</p>
+    <p class="font-body-md opacity-80 mb-4">contact@parahconsulting.com</p>
+    <p class="font-body-md opacity-80">+242 06 000 00 00</p>
+  </div>
+  <div class="col-span-1 md:col-span-4 pt-12 mt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+    <p class="font-body-md opacity-60">© 2024 PARAH Consulting & Services. All rights reserved.</p>
+    <div class="flex gap-8 opacity-60"><a class="hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a><a class="hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a></div>
+  </div>
+</footer>
+<script>
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('header');
+  if (window.scrollY > 50) { header.classList.add('py-2','shadow-sm'); header.classList.remove('py-4'); }
+  else { header.classList.add('py-4'); header.classList.remove('py-2','shadow-sm'); }
+});
+const observerOptions = { threshold: 0.1 };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('opacity-100','translate-y-0');
+      entry.target.classList.remove('opacity-0','translate-y-10');
+    }
+  });
+}, observerOptions);
+document.querySelectorAll('section > div').forEach(el => {
+  el.classList.add('transition-all','duration-1000','opacity-0','translate-y-10');
+  observer.observe(el);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PARAH Consulting & Services — Plateforme digitale</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,450;9..144,600;9..144,700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14213D;
+    --ink-soft:rgba(20,33,61,.68);
+    --ink-faint:rgba(20,33,61,.42);
+    --paper:#F1EEE2;
+    --paper-2:#E7E1CD;
+    --paper-3:#fbf9f3;
+    --teal:#1F6F5C;
+    --teal-deep:#154E41;
+    --gold:#B4881F;
+    --coral:#C6491E;
+    --line:#CFC6A8;
+    --font-display:'Fraunces', serif;
+    --font-body:'IBM Plex Sans', sans-serif;
+    --font-mono:'IBM Plex Mono', monospace;
+    --maxw:760px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  ::selection{ background:var(--gold); color:var(--paper-3); }
+
+  a{ color:inherit; }
+
+  h1,h2,h3{
+    font-family:var(--font-display);
+    font-weight:600;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--teal-deep);
+    display:flex;
+    align-items:center;
+    gap:.55em;
+  }
+  .eyebrow::before{
+    content:"";
+    width:7px;height:7px;
+    border-radius:50%;
+    background:var(--gold);
+    display:inline-block;
+  }
+
+  /* ---------- layout shell ---------- */
+  .shell{
+    display:grid;
+    grid-template-columns:200px 1fr;
+    max-width:1180px;
+    margin:0 auto;
+  }
+  @media (max-width:940px){
+    .shell{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- compass nav ---------- */
+  .compass-nav{
+    position:sticky;
+    top:0;
+    align-self:start;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:0 8px 0 28px;
+  }
+  @media (max-width:940px){
+    .compass-nav{
+      position:sticky;
+      height:auto;
+      top:0;
+      z-index:40;
+      background:rgba(241,238,226,.94);
+      backdrop-filter:blur(6px);
+      border-bottom:1px solid var(--line);
+      padding:14px 20px;
+      flex-direction:row;
+      overflow-x:auto;
+      justify-content:flex-start;
+      gap:2px;
+    }
+  }
+
+  .needle-wrap{
+    width:46px; height:46px;
+    margin-bottom:22px;
+    flex:none;
+  }
+  @media (max-width:940px){ .needle-wrap{ display:none; } }
+  .needle-wrap svg{ width:100%; height:100%; }
+  #needle{
+    transform-origin:50px 50px;
+    transition:transform 1.1s cubic-bezier(.3,.9,.25,1);
+  }
+
+  .compass-list{
+    list-style:none;
+    margin:0; padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+  }
+  @media (max-width:940px){
+    .compass-list{ flex-direction:row; gap:0; }
+  }
+
+  .compass-list a{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    text-decoration:none;
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    color:var(--ink-faint);
+    padding:7px 0;
+    white-space:nowrap;
+    border-left:2px solid transparent;
+    padding-left:10px;
+    transition:color .25s ease, border-color .25s ease;
+  }
+  @media (max-width:940px){
+    .compass-list a{ border-left:none; border-bottom:2px solid transparent; padding:6px 14px; }
+  }
+  .compass-list a .pt{
+    font-weight:600;
+    color:var(--ink-faint);
+    width:1.6em;
+  }
+  .compass-list a.active,
+  .compass-list a:hover{
+    color:var(--ink);
+    border-color:var(--teal);
+  }
+  .compass-list a.active .pt,
+  .compass-list a:hover .pt{ color:var(--teal-deep); }
+
+  /* ---------- main column ---------- */
+  main{ padding:0 28px 140px; min-width:0; }
+  @media (max-width:940px){ main{ padding:0 20px 100px; } }
+
+  section{ scroll-margin-top:24px; }
+
+  /* ---------- hero ---------- */
+  .hero{
+    min-height:92vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding-top:60px;
+    padding-bottom:40px;
+  }
+  .hero-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:24px;
+    margin-bottom:52px;
+  }
+  .hero-top .brand{
+    font-family:var(--font-mono);
+    font-size:13px;
+    letter-spacing:.06em;
+    color:var(--ink-soft);
+  }
+  .hero-top .brand strong{ color:var(--ink); font-weight:600; }
+  .hero-top .tag{
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--teal-deep);
+    background:rgba(31,111,92,.09);
+    border:1px solid rgba(31,111,92,.25);
+    padding:4px 10px;
+    border-radius:100px;
+    white-space:nowrap;
+  }
+
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:40px;
+    align-items:center;
+  }
+  @media (max-width:800px){
+    .hero-grid{ grid-template-columns:1fr; }
+  }
+
+  h1.hero-title{
+    font-size:clamp(2.3rem, 5.2vw, 3.7rem);
+    line-height:1.03;
+    color:var(--ink);
+  }
+  h1.hero-title em{
+    font-style:italic;
+    color:var(--teal-deep);
+  }
+  .hero-sub{
+    margin-top:22px;
+    max-width:46ch;
+    color:var(--ink-soft);
+    font-size:1.05rem;
+  }
+  .hero-meta{
+    display:flex;
+    gap:26px;
+    margin-top:34px;
+    flex-wrap:wrap;
+  }
+  .hero-meta div{ font-family:var(--font-mono); font-size:12px; color:var(--ink-faint); }
+  .hero-meta div b{ display:block; font-family:var(--font-body); font-weight:600; font-size:14px; color:var(--ink); margin-bottom:2px; }
+
+  /* hexagon */
+  .hex-wrap{ position:relative; }
+  .hex-wrap svg{ width:100%; height:auto; overflow:visible; }
+  .hex-path{
+    fill:rgba(31,111,92,.10);
+    stroke:var(--teal);
+    stroke-width:1.6;
+    stroke-linejoin:round;
+    stroke-dasharray:600;
+    stroke-dashoffset:600;
+    animation:draw 1.6s ease-out .2s forwards;
+  }
+  .hex-grid line, .hex-grid polygon{
+    stroke:var(--line);
+    stroke-width:1;
+    fill:none;
+  }
+  @keyframes draw{ to{ stroke-dashoffset:0; } }
+  .hex-label{
+    font-family:var(--font-mono);
+    font-size:10.5px;
+    fill:var(--ink-soft);
+  }
+  .hex-letter{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:15px;
+    fill:var(--ink);
+  }
+  .hex-dot{ fill:var(--gold); }
+
+  /* ---------- chapter header ---------- */
+  .chapter{
+    padding:104px 0 10px;
+    border-top:1px solid var(--line);
+    max-width:var(--maxw);
+  }
+  .chapter:first-of-type{ border-top:none; }
+  .chapter-head{
+    display:flex;
+    align-items:flex-end;
+    gap:16px;
+    margin-bottom:8px;
+  }
+  .chapter-pt{
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--gold);
+    border:1px solid var(--gold);
+    border-radius:100px;
+    padding:3px 10px;
+  }
+  h2.chapter-title{
+    font-size:clamp(1.6rem, 3vw, 2.2rem);
+  }
+  .chapter-dek{
+    color:var(--ink-soft);
+    max-width:56ch;
+    margin-top:14px;
+    font-size:1rem;
+  }
+  .chapter-body{ margin-top:36px; }
+
+  /* ---------- reveal ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(14px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .reveal.in{ opacity:1; transform:none; }
+
+  /* ---------- audience cards ---------- */
+  .cards-row{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+  }
+  @media (max-width:640px){ .cards-row{ grid-template-columns:1fr; } }
+  .aud-card{
+    background:var(--paper-3);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:20px 18px;
+  }
+  .aud-card .n{ font-family:var(--font-mono); font-size:11px; color:var(--ink-faint); }
+  .aud-card h3{ font-size:1.02rem; margin-top:8px; font-weight:600; font-family:var(--font-body); }
+  .aud-card p{ font-size:.9rem; color:var(--ink-soft); margin:8px 0 0; }
+
+  /* ---------- stack instrument row ---------- */
+  .stack-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .stack-item{
+    background:var(--paper-3);
+    padding:18px 16px;
+  }
+  .stack-item .k{ font-family:var(--font-mono); font-size:10.5px; color:var(--teal-deep); text-transform:uppercase; letter-spacing:.06em; }
+  .stack-item .v{ font-family:var(--font-display); font-weight:600; font-size:1.05rem; margin-top:6px; }
+  .stack-item .d{ font-size:.82rem; color:var(--ink-soft); margin-top:5px; }
+
+  /* ---------- terminal block ---------- */
+  .term{
+    background:var(--paper-3);
+    border:1px solid var(--line);
+    border-left:3px solid var(--teal);
+    border-radius:2px;
+    padding:20px 22px;
+    font-family:var(--font-mono);
+    font-size:.85rem;
+    overflow-x:auto;
+  }
+  .term .row{ display:flex; gap:14px; padding:5px 0; white-space:nowrap; }
+  .term .label{ color:var(--ink-faint); width:100px; flex:none; }
+  .term .cmd::before{ content:"❯ "; color:var(--gold); }
+  .term .cmd{ color:var(--ink); }
+
+  /* ---------- file tree ---------- */
+  .tree{
+    background:var(--paper-3);
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:22px 24px;
+    font-family:var(--font-mono);
+    font-size:.82rem;
+    line-height:1.75;
+    overflow-x:auto;
+    color:var(--ink-soft);
+    white-space:pre;
+  }
+  .tree .hi{ color:var(--ink); font-weight:600; }
+  .tree .c{ color:var(--teal-deep); }
+
+  /* ---------- schema dossier ---------- */
+  .dossier{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+  }
+  @media (max-width:640px){ .dossier{ grid-template-columns:1fr; } }
+  .card-model{
+    background:var(--paper-3);
+    border:1px solid var(--line);
+    border-radius:2px;
+    position:relative;
+    padding:16px 18px 14px;
+  }
+  .card-model::before{
+    content:attr(data-tab);
+    position:absolute;
+    top:-11px; left:16px;
+    background:var(--ink);
+    color:var(--paper-3);
+    font-family:var(--font-mono);
+    font-size:10px;
+    letter-spacing:.05em;
+    padding:3px 9px;
+    border-radius:100px;
+  }
+  .card-model ul{ list-style:none; margin:10px 0 0; padding:0; font-family:var(--font-mono); font-size:.78rem; color:var(--ink-soft); }
+  .card-model li{ padding:2.5px 0; display:flex; justify-content:space-between; gap:10px;}
+  .card-model li span.type{ color:var(--ink-faint); }
+  .card-model .rel{ margin-top:10px; font-size:.72rem; color:var(--teal-deep); font-family:var(--font-mono); }
+
+  /* ---------- riasec mini hex in tests ---------- */
+  .tests-wrap{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:36px;
+    align-items:start;
+  }
+  @media (max-width:700px){ .tests-wrap{ grid-template-columns:1fr; } }
+  .test-list{ list-style:none; margin:0; padding:0; }
+  .test-list li{
+    display:flex; gap:14px;
+    padding:13px 0;
+    border-top:1px solid var(--line);
+    align-items:baseline;
+  }
+  .test-list li:first-child{ border-top:none; }
+  .test-list .tk{ font-family:var(--font-mono); font-size:11px; color:var(--gold); width:2em; flex:none; }
+  .test-list h4{ font-family:var(--font-body); font-weight:600; font-size:.95rem; margin:0; }
+  .test-list p{ margin:2px 0 0; font-size:.82rem; color:var(--ink-soft); }
+
+  /* pages list */
+  .page-list{ list-style:none; margin:0; padding:0; }
+  .page-list li{
+    display:grid; grid-template-columns:1.3fr 2fr;
+    gap:16px;
+    padding:14px 0;
+    border-top:1px solid var(--line);
+  }
+  .page-list li:first-child{ border-top:none; }
+  .page-list .route{ font-family:var(--font-mono); font-size:.82rem; color:var(--teal-deep); }
+  .page-list .desc{ font-size:.88rem; color:var(--ink-soft); }
+  .page-list .desc b{ color:var(--ink); font-weight:600; }
+
+  /* ---------- boundaries checkpoints ---------- */
+  .checkpoints{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+  }
+  @media (max-width:700px){ .checkpoints{ grid-template-columns:1fr; } }
+  .cp{
+    border-radius:2px;
+    padding:20px 18px;
+    background:var(--paper-3);
+  }
+  .cp.go{ border-top:3px solid var(--teal); }
+  .cp.ask{ border-top:3px solid var(--gold); }
+  .cp.stop{ border-top:3px solid var(--coral); }
+  .cp h3{ font-family:var(--font-mono); font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; font-weight:600; }
+  .cp.go h3{ color:var(--teal-deep); }
+  .cp.ask h3{ color:var(--gold); }
+  .cp.stop h3{ color:var(--coral); }
+  .cp ul{ margin:12px 0 0; padding-left:18px; font-size:.86rem; color:var(--ink-soft); }
+  .cp li{ margin:6px 0; }
+
+  /* success checklist */
+  .checklist{ list-style:none; margin:0; padding:0; }
+  .checklist li{
+    display:flex; gap:12px; align-items:flex-start;
+    padding:10px 0;
+    border-top:1px solid var(--line);
+    font-size:.92rem;
+  }
+  .checklist li:first-child{ border-top:none; }
+  .checklist .box{
+    width:15px;height:15px; flex:none;
+    border:1.4px solid var(--ink-faint);
+    border-radius:3px;
+    margin-top:3px;
+  }
+
+  /* open questions postcards */
+  .postcards{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+  }
+  @media (max-width:640px){ .postcards{ grid-template-columns:1fr; } }
+  .postcard{
+    border:1.4px dashed var(--ink-faint);
+    border-radius:2px;
+    padding:16px 18px;
+    font-size:.9rem;
+    color:var(--ink-soft);
+    position:relative;
+  }
+  .postcard::after{
+    content:"?";
+    position:absolute; top:10px; right:14px;
+    font-family:var(--font-display);
+    color:var(--ink-faint);
+    font-size:1.1rem;
+  }
+
+  footer{
+    max-width:var(--maxw);
+    padding:60px 0 10px;
+    border-top:1px solid var(--line);
+    margin-top:60px;
+    font-family:var(--font-mono);
+    font-size:11.5px;
+    color:var(--ink-faint);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="shell">
+  <nav class="compass-nav" aria-label="Navigation des chapitres">
+    <div class="needle-wrap" aria-hidden="true">
+      <svg viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="46" fill="none" stroke="var(--line)" stroke-width="1.4"/>
+        <circle cx="50" cy="50" r="46" fill="none" stroke="var(--teal)" stroke-width="1.4" stroke-dasharray="4 6" opacity=".5"/>
+        <g id="needle">
+          <line x1="50" y1="12" x2="50" y2="50" stroke="var(--coral)" stroke-width="2.4" stroke-linecap="round"/>
+          <line x1="50" y1="88" x2="50" y2="50" stroke="var(--ink-faint)" stroke-width="2.4" stroke-linecap="round"/>
+        </g>
+        <circle cx="50" cy="50" r="3" fill="var(--ink)"/>
+      </svg>
+    </div>
+    <ul class="compass-list">
+      <li><a href="#objectif" data-pt="N"><span class="pt">N</span>Objectif</a></li>
+      <li><a href="#stack" data-pt="NE"><span class="pt">NE</span>Stack</a></li>
+      <li><a href="#commandes" data-pt="E"><span class="pt">E</span>Commandes</a></li>
+      <li><a href="#structure" data-pt="SE"><span class="pt">SE</span>Structure</a></li>
+      <li><a href="#donnees" data-pt="S"><span class="pt">S</span>Données</a></li>
+      <li><a href="#contenu" data-pt="SW"><span class="pt">SW</span>Pages & tests</a></li>
+      <li><a href="#limites" data-pt="W"><span class="pt">W</span>Limites</a></li>
+      <li><a href="#succes" data-pt="NW"><span class="pt">NW</span>Succès</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="hero">
+      <div class="hero-top">
+        <div class="brand"><strong>PARAH</strong> Consulting & Services — dossier de spécification</div>
+        <div class="tag">v1 · en cadrage</div>
+      </div>
+      <div class="hero-grid">
+        <div>
+          <h1 class="hero-title">Un cap clair pour <em>s'orienter</em>, un socle solide pour <em>bâtir</em>.</h1>
+          <p class="hero-sub">La plateforme réunit deux missions : un site vitrine qui présente les services et formations de PARAH Consulting, et une application de tests psychotechniques — RIASEC, intelligences multiples, aptitudes — qui aide chacun à trouver sa direction.</p>
+          <div class="hero-meta">
+            <div><b>Next.js 14+</b>App Router</div>
+            <div><b>PostgreSQL</b>via Prisma</div>
+            <div><b>NextAuth.js</b>email + mot de passe</div>
+            <div><b>7 tests</b>d'orientation</div>
+          </div>
+        </div>
+        <div class="hex-wrap">
+          <svg viewBox="0 0 300 300">
+            <g class="hex-grid">
+              <polygon points="150,40 245,95 245,205 150,260 55,205 55,95"/>
+              <polygon points="150,74 217,113 217,187 150,226 83,187 83,113"/>
+              <line x1="150" y1="40" x2="150" y2="260"/>
+              <line x1="55" y1="95" x2="245" y2="205"/>
+              <line x1="245" y1="95" x2="55" y2="205"/>
+            </g>
+            <polygon class="hex-path" points="150,55 228,105 218,195 150,245 82,195 72,105"/>
+            <g class="hex-dot"><circle cx="150" cy="55" r="3.5"/><circle cx="228" cy="105" r="3.5"/><circle cx="218" cy="195" r="3.5"/><circle cx="150" cy="245" r="3.5"/><circle cx="82" cy="195" r="3.5"/><circle cx="72" cy="105" r="3.5"/></g>
+            <text x="150" y="30" text-anchor="middle" class="hex-letter">R</text>
+            <text x="150" y="18" text-anchor="middle" class="hex-label">Réaliste</text>
+            <text x="256" y="98" text-anchor="start" class="hex-letter">I</text>
+            <text x="256" y="114" text-anchor="start" class="hex-label">Investigateur</text>
+            <text x="256" y="212" text-anchor="start" class="hex-letter">A</text>
+            <text x="256" y="228" text-anchor="start" class="hex-label">Artistique</text>
+            <text x="150" y="282" text-anchor="middle" class="hex-letter">S</text>
+            <text x="150" y="296" text-anchor="middle" class="hex-label">Social</text>
+            <text x="44" y="212" text-anchor="end" class="hex-letter">E</text>
+            <text x="44" y="228" text-anchor="end" class="hex-label">Entreprenant</text>
+            <text x="44" y="98" text-anchor="end" class="hex-letter">C</text>
+            <text x="44" y="114" text-anchor="end" class="hex-label">Conventionnel</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= N — OBJECTIF ================= -->
+    <section class="chapter" id="objectif">
+      <div class="chapter-head"><span class="chapter-pt">N</span><h2 class="chapter-title">Objectif</h2></div>
+      <p class="chapter-dek">Une plateforme web qui combine découverte institutionnelle et passation de tests validés, avec une création de compte volontairement légère.</p>
+      <div class="chapter-body reveal">
+        <div class="cards-row">
+          <div class="aud-card">
+            <div class="n">Public 01</div>
+            <h3>Grand public & prospects</h3>
+            <p>À la recherche de services de conseil et de formation.</p>
+          </div>
+          <div class="aud-card">
+            <div class="n">Public 02</div>
+            <h3>Élèves & adultes en reconversion</h3>
+            <p>12 à 17 ans, ou adultes qui cherchent à se réorienter.</p>
+          </div>
+          <div class="aud-card">
+            <div class="n">Public 03</div>
+            <h3>Clients existants</h3>
+            <p>Déjà accompagnés par PARAH Consulting.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= NE — STACK ================= -->
+    <section class="chapter" id="stack">
+      <div class="chapter-head"><span class="chapter-pt">NE</span><h2 class="chapter-title">Stack technique</h2></div>
+      <p class="chapter-dek">Les instruments retenus pour construire la plateforme.</p>
+      <div class="chapter-body reveal">
+        <div class="stack-row">
+          <div class="stack-item"><div class="k">Framework</div><div class="v">Next.js 14+</div><div class="d">App Router, SSR/SSG</div></div>
+          <div class="stack-item"><div class="k">Langage</div><div class="v">TypeScript</div><div class="d">Strict</div></div>
+          <div class="stack-item"><div class="k">Styling</div><div class="v">Tailwind CSS</div><div class="d">Utilitaire, mobile-first</div></div>
+          <div class="stack-item"><div class="k">Données</div><div class="v">PostgreSQL</div><div class="d">via Prisma ORM</div></div>
+          <div class="stack-item"><div class="k">Auth</div><div class="v">NextAuth.js</div><div class="d">Email + mot de passe</div></div>
+          <div class="stack-item"><div class="k">Déploiement</div><div class="v">Vercel</div><div class="d">À confirmer</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= E — COMMANDES ================= -->
+    <section class="chapter" id="commandes">
+      <div class="chapter-head"><span class="chapter-pt">E</span><h2 class="chapter-title">Commandes</h2></div>
+      <p class="chapter-dek">Le vocabulaire de base pour naviguer le projet au quotidien.</p>
+      <div class="chapter-body reveal">
+        <div class="term">
+          <div class="row"><span class="label">Build</span><span class="cmd">npm run build</span></div>
+          <div class="row"><span class="label">Dev</span><span class="cmd">npm run dev</span></div>
+          <div class="row"><span class="label">Lint</span><span class="cmd">npm run lint</span></div>
+          <div class="row"><span class="label">Type check</span><span class="cmd">npm run typecheck</span></div>
+          <div class="row"><span class="label">Test</span><span class="cmd">npm test</span></div>
+          <div class="row"><span class="label">DB migrate</span><span class="cmd">npx prisma migrate dev</span></div>
+          <div class="row"><span class="label">DB studio</span><span class="cmd">npx prisma studio</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SE — STRUCTURE ================= -->
+    <section class="chapter" id="structure">
+      <div class="chapter-head"><span class="chapter-pt">SE</span><h2 class="chapter-title">Structure du projet</h2></div>
+      <p class="chapter-dek">Vitrine publique, authentification et tests protégés cohabitent sous un même <span style="font-family:var(--font-mono)">app/</span>.</p>
+      <div class="chapter-body reveal">
+        <div class="tree">src/
+├── app/                    <span class="c"># App Router pages</span>
+│   ├── <span class="hi">(public)</span>/           <span class="c"># Pages vitrine (layout public)</span>
+│   │   ├── page.tsx        <span class="c"># Accueil</span>
+│   │   ├── services/       <span class="c"># Services</span>
+│   │   ├── formations/     <span class="c"># Formations</span>
+│   │   └── rendez-vous/    <span class="c"># RDV + tests</span>
+│   ├── <span class="hi">(auth)</span>/             <span class="c"># Pages authentification</span>
+│   │   ├── connexion/
+│   │   └── inscription/
+│   ├── <span class="hi">tests/</span>              <span class="c"># Tests d'orientation (protégées)</span>
+│   │   ├── riasec-junior/
+│   │   ├── riasec-adulte/
+│   │   ├── interets-pro/
+│   │   ├── aptitudes/
+│   │   ├── styles-apprentissage/
+│   │   ├── intelligences-multiples/
+│   │   └── personnalite/
+│   ├── mon-compte/         <span class="c"># Profil utilisateur (protégée)</span>
+│   ├── layout.tsx          <span class="c"># Layout racine</span>
+│   └── globals.css
+├── components/
+│   ├── ui/                 <span class="c"># Button, Card, Input...</span>
+│   ├── layout/              <span class="c"># Header, Footer, Navigation</span>
+│   └── tests/               <span class="c"># Composants spécifiques aux tests</span>
+├── lib/
+│   ├── prisma.ts
+│   ├── auth.ts
+│   └── utils.ts
+├── types/
+└── data/                   <span class="c"># Questions des tests, contenus</span>
+prisma/
+├── schema.prisma
+└── seed.ts
+public/</div>
+      </div>
+    </section>
+
+    <!-- ================= S — DONNEES ================= -->
+    <section class="chapter" id="donnees">
+      <div class="chapter-head"><span class="chapter-pt">S</span><h2 class="chapter-title">Modèle de données</h2></div>
+      <p class="chapter-dek">Cinq fiches reliées entre elles : un utilisateur passe des tests, chaque test contient des questions, chaque question des options notées.</p>
+      <div class="chapter-body reveal">
+        <div class="dossier">
+          <div class="card-model" data-tab="User">
+            <ul>
+              <li>email <span class="type">unique</span></li>
+              <li>nom, prénom <span class="type">string</span></li>
+              <li>téléphone <span class="type">optionnel</span></li>
+              <li>password <span class="type">hash</span></li>
+            </ul>
+            <div class="rel">→ tests[], rdvs[]</div>
+          </div>
+          <div class="card-model" data-tab="Test">
+            <ul>
+              <li>slug <span class="type">unique</span></li>
+              <li>titre, description</li>
+              <li>duréeMin <span class="type">int</span></li>
+            </ul>
+            <div class="rel">→ questions[]</div>
+          </div>
+          <div class="card-model" data-tab="Question">
+            <ul>
+              <li>texte <span class="type">string</span></li>
+              <li>ordre <span class="type">int</span></li>
+            </ul>
+            <div class="rel">← test · → options[]</div>
+          </div>
+          <div class="card-model" data-tab="QuestionOption">
+            <ul>
+              <li>texte <span class="type">string</span></li>
+              <li>valeur <span class="type">score</span></li>
+              <li>dimension <span class="type">optionnel</span></li>
+            </ul>
+            <div class="rel">← question</div>
+          </div>
+          <div class="card-model" data-tab="TestResult" style="grid-column:1/-1">
+            <ul>
+              <li>scores <span class="type">json { dimension: score }</span></li>
+              <li>interprétation <span class="type">texte optionnel</span></li>
+              <li>createdAt <span class="type">date</span></li>
+            </ul>
+            <div class="rel">← user · ← test</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SW — CONTENU ================= -->
+    <section class="chapter" id="contenu">
+      <div class="chapter-head"><span class="chapter-pt">SW</span><h2 class="chapter-title">Pages & tests</h2></div>
+      <p class="chapter-dek">Quatre pages vitrine héritées de l'existant, sept tests d'orientation, une authentification légère.</p>
+      <div class="chapter-body reveal">
+        <ul class="page-list">
+          <li><span class="route">/</span><span class="desc"><b>Accueil</b> — hero, stats, témoignages, newsletter, logos partenaires</span></li>
+          <li><span class="route">/services</span><span class="desc"><b>Services</b> — Consulting stratégique, Opérationnel, Capital Humain</span></li>
+          <li><span class="route">/formations</span><span class="desc"><b>Formations</b> — catalogue avec catégories, prix, inscription</span></li>
+          <li><span class="route">/rendez-vous</span><span class="desc"><b>Rendez-vous</b> — présentation des tests + calendrier de réservation</span></li>
+        </ul>
+
+        <div style="height:44px"></div>
+
+        <div class="tests-wrap">
+          <ul class="test-list">
+            <li><span class="tk">01</span><div><h4>RIASEC Junior</h4><p>60 questions, 15 min — pour 12-17 ans</p></div></li>
+            <li><span class="tk">02</span><div><h4>RIASEC Adulte</h4><p>Pour adultes en reconversion</p></div></li>
+            <li><span class="tk">03</span><div><h4>Intérêts professionnels</h4></div></li>
+            <li><span class="tk">04</span><div><h4>Aptitudes scolaires</h4></div></li>
+            <li><span class="tk">05</span><div><h4>Styles d'apprentissage</h4></div></li>
+            <li><span class="tk">06</span><div><h4>Intelligences multiples</h4><p>8 formes d'intelligence</p></div></li>
+            <li><span class="tk">07</span><div><h4>Personnalité</h4></div></li>
+          </ul>
+          <div>
+            <div class="term" style="font-size:.8rem">
+              <div class="row"><span class="label">Inscription</span><span class="cmd">email + mot de passe + nom</span></div>
+              <div class="row"><span class="label">Connexion</span><span class="cmd">accès tests + historique</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= W — LIMITES ================= -->
+    <section class="chapter" id="limites">
+      <div class="chapter-head"><span class="chapter-pt">W</span><h2 class="chapter-title">Limites du terrain</h2></div>
+      <p class="chapter-dek">Trois postes de contrôle pour garder le chantier sous contrôle.</p>
+      <div class="chapter-body reveal">
+        <div class="checkpoints">
+          <div class="cp go">
+            <h3>Toujours</h3>
+            <ul>
+              <li>TypeScript strict</li>
+              <li>Valider les entrées (Zod)</li>
+              <li>Responsive mobile-first</li>
+              <li>Accessibilité (a11y)</li>
+              <li>Tests sur fonctions critiques</li>
+              <li>Lint + typecheck avant commit</li>
+            </ul>
+          </div>
+          <div class="cp ask">
+            <h3>Je demande d'abord</h3>
+            <ul>
+              <li>Ajouter une dépendance npm</li>
+              <li>Modifier le schéma Prisma</li>
+              <li>Changer l'architecture des pages</li>
+              <li>Ajouter une API externe</li>
+              <li>Modifier la config Tailwind</li>
+            </ul>
+          </div>
+          <div class="cp stop">
+            <h3>Jamais</h3>
+            <ul>
+              <li>Commiter des secrets / clés API</li>
+              <li>Supprimer des tests sans approbation</li>
+              <li>Ignorer les erreurs TypeScript</li>
+              <li>Style inline sans raison</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= NW — SUCCES ================= -->
+    <section class="chapter" id="succes">
+      <div class="chapter-head"><span class="chapter-pt">NW</span><h2 class="chapter-title">Critères de succès</h2></div>
+      <p class="chapter-dek">Ce qui doit être vrai avant de considérer le cap atteint.</p>
+      <div class="chapter-body reveal">
+        <ul class="checklist">
+          <li><span class="box"></span>Toutes les pages vitrine reproduisent le design des fichiers HTML existants</li>
+          <li><span class="box"></span>Les 7 tests d'orientation sont fonctionnels avec scoring automatique</li>
+          <li><span class="box"></span>L'inscription et la connexion fonctionnent</li>
+          <li><span class="box"></span>L'utilisateur peut voir l'historique de ses résultats</li>
+          <li><span class="box"></span>Le site est responsive (mobile + desktop)</li>
+          <li><span class="box"></span>Lighthouse performance &gt; 80</li>
+        </ul>
+
+        <div style="height:56px"></div>
+        <div class="eyebrow" style="margin-bottom:18px">Questions ouvertes</div>
+        <div class="postcards">
+          <div class="postcard">Base de données : Supabase ? Render ? autre hébergeur PostgreSQL ?</div>
+          <div class="postcard">Déploiement : Vercel confirmé, ou autre plateforme ?</div>
+          <div class="postcard">Faut-il un panel admin pour gérer les questions des tests ?</div>
+          <div class="postcard">Les tests doivent-ils être accessibles sans inscription ?</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>PARAH Consulting & Services</span>
+      <span>Dossier établi à partir de SPEC.md</span>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el=>io.observe(el));
+
+  // active compass point + needle rotation
+  const links = document.querySelectorAll('.compass-list a');
+  const sections = Array.from(links).map(l=>document.querySelector(l.getAttribute('href')));
+  const needle = document.getElementById('needle');
+  const angles = { N:0, NE:45, E:90, SE:135, S:180, SW:225, W:270, NW:315 };
+
+  function setActive(){
+    let idx = 0;
+    const y = window.scrollY + window.innerHeight * 0.3;
+    sections.forEach((s,i)=>{ if(s && s.offsetTop <= y) idx = i; });
+    links.forEach(l=>l.classList.remove('active'));
+    const active = links[idx];
+    if(active){
+      active.classList.add('active');
+      const pt = active.dataset.pt;
+      needle.style.transform = 'rotate(' + (angles[pt]||0) + 'deg)';
+    }
+  }
+  window.addEventListener('scroll', setActive, { passive:true });
+  setActive();
+</script>
+
+</body>
+</html>

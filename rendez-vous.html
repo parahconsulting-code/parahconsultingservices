@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Orientation & Rendez-vous - PARAH Consulting</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+.calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); }
+.scroll-hide::-webkit-scrollbar { display: none; }
+.scroll-hide { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: { "on-secondary-fixed":"#341100","primary-fixed-dim":"#bec6e0","error":"#ba1a1a","surface-container":"#eceef0","outline-variant":"#c6c6cd","on-tertiary-fixed":"#001e2f","surface-container-low":"#f2f4f6","on-secondary":"#ffffff","on-surface":"#191c1e","on-tertiary":"#ffffff","surface-container-lowest":"#ffffff","tertiary":"#000000","primary-container":"#131b2e","surface-container-high":"#e6e8ea","on-secondary-fixed-variant":"#783200","primary":"#000000","secondary-fixed":"#ffdbca","surface-dim":"#d8dadc","on-error-container":"#93000a","tertiary-container":"#001e2f","on-secondary-container":"#5c2400","primary-fixed":"#dae2fd","secondary":"#9d4300","on-surface-variant":"#45464d","tertiary-fixed":"#c9e6ff","surface-tint":"#565e74","surface-container-highest":"#e0e3e5","surface-bright":"#f7f9fb","inverse-on-surface":"#eff1f3","background":"#f7f9fb","inverse-primary":"#bec6e0","secondary-container":"#fd761a","error-container":"#ffdad6","on-primary-container":"#7c839b","outline":"#76777d","secondary-fixed-dim":"#ffb690","surface":"#f7f9fb","inverse-surface":"#2d3133","on-primary-fixed-variant":"#3f465c","tertiary-fixed-dim":"#89ceff","on-tertiary-fixed-variant":"#004c6e","surface-variant":"#e0e3e5","on-primary-fixed":"#131b2e","on-tertiary-container":"#008cc7","on-error":"#ffffff","on-background":"#191c1e","on-primary":"#ffffff"
+      },
+      borderRadius: { DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem" },
+      spacing: { "container-max": "1280px", "margin-desktop": "64px", base: "8px", "margin-mobile": "16px", gutter: "24px" },
+      fontFamily: { "body-lg": ["Inter"], "body-md": ["Inter"], "display-lg": ["Montserrat"], "headline-sm": ["Montserrat"], "display-lg-mobile": ["Montserrat"], "headline-md": ["Montserrat"], "label-md": ["Inter"] },
+      fontSize: { "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }], "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }], "display-lg": ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }], "headline-sm": ["24px", { lineHeight: "1.4", fontWeight: "600" }], "display-lg-mobile": ["32px", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700" }], "headline-md": ["30px", { lineHeight: "1.3", fontWeight: "600" }], "label-md": ["14px", { lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "600" }] }
+    },
+  },
+}
+</script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-16 py-4 bg-surface/95 backdrop-blur-md border-b border-outline-variant">
+  <a href="index.html" class="font-display-lg text-[24px] md:text-display-lg font-bold text-primary">PARAH Consulting</a>
+  <div class="hidden md:flex items-center gap-8">
+    <a href="index.html" class="text-on-surface hover:text-secondary transition-colors duration-200 font-body-md">Accueil</a>
+    <a href="services.html" class="text-on-surface hover:text-secondary transition-colors duration-200 font-body-md">Services</a>
+    <a href="formations.html" class="text-on-surface hover:text-secondary transition-colors duration-200 font-body-md">Formations</a>
+    <a href="rendez-vous.html" class="text-secondary font-bold border-b-2 border-secondary font-body-md">Rendez-vous</a>
+    <a href="#contact" class="text-on-surface hover:text-secondary transition-colors duration-200 font-body-md">Contact</a>
+  </div>
+  <a href="rendez-vous.html" class="bg-primary text-on-primary px-6 py-2 rounded font-label-md scale-95 active:scale-90 transition-transform">Prendre RDV</a>
+</nav>
+<main class="flex-grow pt-32 pb-20 px-4 md:px-margin-desktop max-w-container-max mx-auto w-full">
+  <header class="mb-16">
+    <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-4">Orientation & Carrière</h1>
+    <p class="font-body-lg text-on-surface-variant max-w-2xl">Découvrez votre potentiel à travers nos tests psychotechniques validés et réservez un accompagnement personnalisé avec nos experts en ressources humaines.</p>
+  </header>
+  <section class="mb-24">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="material-symbols-outlined text-secondary" style="font-size: 32px;">psychology</span>
+      <h2 class="font-headline-md text-headline-md text-primary">Tests d'Orientation</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+      <div class="md:col-span-8 group relative overflow-hidden rounded-xl border border-outline-variant bg-surface-container-lowest transition-all duration-300 hover:shadow-xl hover:border-secondary">
+        <div class="p-8 flex flex-col h-full">
+          <div class="flex justify-between items-start mb-6">
+            <span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase">Populaire</span>
+            <span class="material-symbols-outlined text-primary-fixed-dim" style="font-size: 48px;">school</span>
+          </div>
+          <h3 class="font-headline-sm text-headline-sm mb-3">RIASEC Junior</h3>
+          <p class="text-on-surface-variant mb-8 flex-grow">Conçu pour les élèves du secondaire (12-17 ans). Ce test identifie les types de personnalité dominants et suggère des parcours académiques adaptés aux aspirations précoces.</p>
+          <div class="flex items-center justify-between">
+            <div class="flex gap-4 text-sm text-on-surface-variant"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">timer</span> 15 min</span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">task_alt</span> 60 questions</span></div>
+            <button class="flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-lg font-label-md transition-transform active:scale-95" onclick="alert('Test RIASEC Junior lancé !')">Démarrer le test <span class="material-symbols-outlined">arrow_forward</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="md:col-span-4 group relative overflow-hidden rounded-xl border border-outline-variant bg-surface-container-lowest transition-all duration-300 hover:shadow-xl hover:border-secondary">
+        <div class="p-8 flex flex-col h-full">
+          <span class="material-symbols-outlined text-on-tertiary-container mb-6" style="font-size: 48px;">lightbulb</span>
+          <h3 class="font-headline-sm text-headline-sm mb-3">Intelligences Multiples</h3>
+          <p class="text-on-surface-variant mb-8 flex-grow">Identifiez vos 8 formes d'intelligence dominantes pour mieux comprendre comment vous apprenez et collaborez.</p>
+          <button class="w-full flex items-center justify-center gap-2 border-2 border-primary text-primary px-6 py-3 rounded-lg font-label-md transition-all hover:bg-primary hover:text-on-primary" onclick="alert('Test Intelligences Multiples lancé !')">Démarrer <span class="material-symbols-outlined">play_circle</span></button>
+        </div>
+      </div>
+      <div class="md:col-span-12 group relative overflow-hidden rounded-xl border border-outline-variant bg-surface-container-lowest flex flex-col md:flex-row transition-all duration-300 hover:shadow-xl hover:border-secondary">
+        <div class="md:w-1/3 h-64 md:h-auto" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCq8_sE5tdFyytlWMPsfihD4Ku7sCMSWb-kxh-G2bKDYx2P71NEIl-mCsdIgCNMe87lzJIbeAV52-Z5DTbc8rAfufLFuOzsWjTxA2IrhkQiuvmswaV4ygh3e_axMf5a6cIqXqOzUPlVrtiPs8Ni5o8Ay5OJu1fhUvWUdv0FpZ9BySbFvT2aCqmmqcS35yKRl8sAycKWXy8yHOJGOc61z5-tNbq_EZU9JpCBKJCsm9AnIu5Pe85CQsP_qHbmYGHuMYo3VlI3s6sQcSc')"></div>
+        <div class="p-8 md:w-2/3 flex flex-col justify-center">
+          <h3 class="font-headline-sm text-headline-sm mb-2">RIASEC Adulte & Reconversion</h3>
+          <p class="text-on-surface-variant mb-6">Analyse approfondie pour les professionnels en quête de sens ou de changement de carrière. Basé sur le modèle de Holland, ce test croise vos intérêts avec les réalités du marché du travail actuel.</p>
+          <div class="flex flex-wrap gap-6 mb-8">
+            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary">verified</span> <span class="text-sm font-medium">Certification RH</span></div>
+            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary">analytics</span> <span class="text-sm font-medium">Rapport détaillé (PDF)</span></div>
+            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary">group</span> <span class="text-sm font-medium">Comparatif sectoriel</span></div>
+          </div>
+          <button class="self-start flex items-center gap-2 bg-primary text-on-primary px-8 py-3 rounded-lg font-label-md transition-transform active:scale-95" onclick="alert('Test RIASEC Adulte lancé !')">Évaluer mon profil <span class="material-symbols-outlined">trending_up</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden shadow-sm" id="booking-section">
+    <div class="grid grid-cols-1 lg:grid-cols-12">
+      <div class="lg:col-span-5 p-8 md:p-12 border-b lg:border-b-0 lg:border-r border-outline-variant bg-surface-container-low">
+        <div class="flex items-center gap-3 mb-10"><span class="material-symbols-outlined text-secondary" style="font-size: 32px;">event_available</span><h2 class="font-headline-sm text-headline-sm text-primary">Prendre Rendez-vous</h2></div>
+        <div class="space-y-8">
+          <div>
+            <label class="block font-label-md text-on-surface-variant mb-3">1. CHOISIR UN SERVICE</label>
+            <div class="space-y-3">
+              <button class="w-full text-left p-4 rounded-lg border-2 border-primary bg-on-primary flex items-center gap-4 transition-all"><span class="material-symbols-outlined text-secondary">person_search</span><div><div class="font-bold text-sm">Débriefing Test RIASEC</div><div class="text-xs text-on-surface-variant">45 min • Entretien individuel</div></div></button>
+              <button class="w-full text-left p-4 rounded-lg border border-outline-variant hover:border-secondary transition-all flex items-center gap-4"><span class="material-symbols-outlined text-on-surface-variant">psychology_alt</span><div><div class="font-bold text-sm">Bilan de Compétences</div><div class="text-xs text-on-surface-variant">90 min • Coaching complet</div></div></button>
+              <button class="w-full text-left p-4 rounded-lg border border-outline-variant hover:border-secondary transition-all flex items-center gap-4"><span class="material-symbols-outlined text-on-surface-variant">history_edu</span><div><div class="font-bold text-sm">Conseil en Orientation Scolaire</div><div class="text-xs text-on-surface-variant">60 min • Parents & Élèves</div></div></button>
+            </div>
+          </div>
+          <div>
+            <label class="block font-label-md text-on-surface-variant mb-3">2. EXPERT RÉFÉRENT</label>
+            <div class="flex gap-4 overflow-x-auto pb-2 scroll-hide">
+              <div class="flex-shrink-0 flex flex-col items-center gap-2 cursor-pointer group">
+                <div class="w-16 h-16 rounded-full border-2 border-secondary p-1"><div class="w-full h-full rounded-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDBtLhM4MMc6RYCEpLXsMO-dbX45rtmKE4oDzKZidx7wWTd6CbDLj8sbCl3of-u9MeeGCTIaa0g7JS2WFV34QyYeZBysIoVJdgRwm6z2PzJzjmEdm5N752atHvHJ2o3gU41YylDCf0x1VoOitAuW8PJXbK-2KUbRc6hUaGKSA0oU-NPvXaftz9l4iRaud-YSL4DqXcD5EgTaRfkunFRQamSoTGJu8ZqtjHqG0Jr1KStA8Z5W2sT1LYhL0-kHyUfPfud4PJi8FT9Ysc')"></div></div>
+                <span class="text-xs font-bold">Mme. Diallo</span>
+              </div>
+              <div class="flex-shrink-0 flex flex-col items-center gap-2 cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
+                <div class="w-16 h-16 rounded-full border border-outline-variant p-1"><div class="w-full h-full rounded-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJaqtZ5PdBVjBo9iRMZKPK5WnF6ZMScDnYwMJ_lIn-AVmCVTd5SzMyn86ixCBqJwCox82LjeZe02inZuBTL3UUeClyI6WIogwGrITjiC2J8HfgkqhV_2O5E1xpIQ7R1DQ0iC-HU-qH7_Ibd76J1bvVIkWNGk1TkeBKZSaT7LmU6CaHuXGLsewG_IdZMUShsi0uN6D681yqG0iWrQhpvD-wVqVixl2WaRR9RNX5TSjYf3WPHlpqoQxIgO3767QUeJja5bJ0zkMP9-8')"></div></div>
+                <span class="text-xs font-medium">Mr. Ndoki</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-7 p-8 md:p-12">
+        <div class="flex justify-between items-center mb-8">
+          <h3 class="font-headline-sm text-headline-sm">Octobre 2024</h3>
+          <div class="flex gap-2">
+            <button class="p-2 rounded-full hover:bg-surface-container transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
+            <button class="p-2 rounded-full hover:bg-surface-container transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
+          </div>
+        </div>
+        <div class="calendar-grid gap-2 mb-10 text-center">
+          <div class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest py-2">Lun</div>
+          <div class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest py-2">Mar</div>
+          <div class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest py-2">Mer</div>
+          <div class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest py-2">Jeu</div>
+          <div class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest py-2">Ven</div>
+          <div class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest py-2">Sam</div>
+          <div class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest py-2">Dim</div>
+          <div class="h-12 flex items-center justify-center text-on-surface-variant/30 text-sm">30</div>
+          <div class="h-12 flex items-center justify-center text-sm hover:bg-surface-container rounded-lg cursor-pointer">1</div>
+          <div class="h-12 flex items-center justify-center text-sm hover:bg-surface-container rounded-lg cursor-pointer">2</div>
+          <div class="h-12 flex items-center justify-center text-sm hover:bg-surface-container rounded-lg cursor-pointer">3</div>
+          <div class="h-12 flex items-center justify-center text-sm hover:bg-surface-container rounded-lg cursor-pointer">4</div>
+          <div class="h-12 flex items-center justify-center text-sm hover:bg-surface-container rounded-lg cursor-pointer">5</div>
+          <div class="h-12 flex items-center justify-center text-sm hover:bg-surface-container rounded-lg cursor-pointer">6</div>
+          <div class="h-12 flex items-center justify-center text-sm hover:bg-surface-container rounded-lg cursor-pointer">7</div>
+          <div class="h-12 flex items-center justify-center text-sm hover:bg-surface-container rounded-lg cursor-pointer">8</div>
+          <div class="h-12 flex items-center justify-center text-sm hover:bg-surface-container rounded-lg cursor-pointer">9</div>
+          <div class="h-12 flex items-center justify-center text-sm hover:bg-surface-container rounded-lg cursor-pointer">10</div>
+          <div class="h-12 flex items-center justify-center text-sm hover:bg-surface-container rounded-lg cursor-pointer">11</div>
+          <div class="h-12 flex items-center justify-center text-sm hover:bg-surface-container rounded-lg cursor-pointer">12</div>
+          <div class="h-12 flex items-center justify-center text-sm hover:bg-surface-container rounded-lg cursor-pointer">13</div>
+          <div class="h-12 flex items-center justify-center text-sm bg-primary text-on-primary rounded-lg cursor-pointer font-bold">14</div>
+          <div class="h-12 flex items-center justify-center text-sm hover:bg-surface-container rounded-lg cursor-pointer relative">15<span class="absolute bottom-1 w-1 h-1 bg-secondary rounded-full"></span></div>
+          <div class="h-12 flex items-center justify-center text-sm hover:bg-surface-container rounded-lg cursor-pointer">16</div>
+          <div class="h-12 flex items-center justify-center text-sm hover:bg-surface-container rounded-lg cursor-pointer">17</div>
+          <div class="h-12 flex items-center justify-center text-sm hover:bg-surface-container rounded-lg cursor-pointer relative">18<span class="absolute bottom-1 w-1 h-1 bg-secondary rounded-full"></span></div>
+          <div class="h-12 flex items-center justify-center text-sm hover:bg-surface-container rounded-lg cursor-pointer">19</div>
+          <div class="h-12 flex items-center justify-center text-sm hover:bg-surface-container rounded-lg cursor-pointer">20</div>
+        </div>
+        <div>
+          <h4 class="font-label-md text-on-surface-variant mb-4 uppercase tracking-wider">Créneaux disponibles - Lundi 14 Oct.</h4>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <button class="py-3 px-2 text-center rounded border border-outline-variant text-sm font-medium hover:border-secondary transition-colors">09:00</button>
+            <button class="py-3 px-2 text-center rounded border-2 border-secondary bg-secondary-fixed text-on-secondary-fixed text-sm font-bold">10:30</button>
+            <button class="py-3 px-2 text-center rounded border border-outline-variant text-sm font-medium hover:border-secondary transition-colors">14:00</button>
+            <button class="py-3 px-2 text-center rounded border border-outline-variant text-sm font-medium opacity-30 cursor-not-allowed bg-surface-container line-through">15:30</button>
+          </div>
+        </div>
+        <div class="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-outline-variant pt-8">
+          <div class="text-sm text-on-surface-variant italic">Un email de confirmation vous sera envoyé instantanément.</div>
+          <button class="w-full sm:w-auto bg-primary text-on-primary px-10 py-4 rounded-lg font-label-md shadow-lg shadow-primary/20 transition-all hover:-translate-y-1 active:translate-y-0" onclick="alert('Rendez-vous confirmé !')">Confirmer la réservation</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="w-full py-12 px-6 md:px-16 grid grid-cols-1 md:grid-cols-4 gap-8 bg-primary-container text-on-primary-container">
+  <div class="md:col-span-1">
+    <div class="font-headline-sm text-headline-sm font-bold text-on-primary-container mb-4">PARAH Consulting</div>
+    <p class="text-sm text-on-primary-container/80 mb-6">Expertise, Fiabilité et Transformation au service de votre avenir professionnel.</p>
+  </div>
+  <div class="flex flex-col gap-3">
+    <span class="font-bold text-sm uppercase tracking-widest mb-2">Navigation</span>
+    <a class="text-on-primary-container/80 hover:text-on-primary transition-opacity text-sm" href="#">Privacy Policy</a>
+    <a class="text-on-primary-container/80 hover:text-on-primary transition-opacity text-sm" href="#">Terms of Service</a>
+    <a class="text-on-primary-container/80 hover:text-on-primary transition-opacity text-sm" href="#">FAQ</a>
+    <a class="text-on-primary-container/80 hover:text-on-primary transition-opacity text-sm" href="#">Careers</a>
+  </div>
+  <div class="flex flex-col gap-3">
+    <span class="font-bold text-sm uppercase tracking-widest mb-2">Bureaux</span>
+    <p class="text-sm text-on-primary-container/80">Avenue des Grands Ducs, Brazzaville, Congo</p>
+    <p class="text-sm text-on-primary-container/80">+242 06 000 00 00</p>
+  </div>
+  <div class="flex flex-col gap-4">
+    <span class="font-bold text-sm uppercase tracking-widest mb-2">Suivez-nous</span>
+    <div class="flex gap-4">
+      <a class="w-10 h-10 rounded-full border border-on-primary-container/20 flex items-center justify-center hover:bg-on-primary-container/10 transition-colors" href="#"><span class="material-symbols-outlined text-sm">share</span></a>
+      <a class="w-10 h-10 rounded-full border border-on-primary-container/20 flex items-center justify-center hover:bg-on-primary-container/10 transition-colors" href="#"><span class="material-symbols-outlined text-sm">chat</span></a>
+    </div>
+    <p class="text-[12px] text-on-primary-container/60 mt-4">© 2024 PARAH Consulting & Services. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+document.querySelectorAll('.calendar-grid div').forEach(day => {
+  if(day.classList.contains('cursor-pointer')) {
+    day.addEventListener('click', function() {
+      document.querySelectorAll('.calendar-grid div').forEach(d => d.classList.remove('bg-primary','text-on-primary','font-bold'));
+      this.classList.add('bg-primary','text-on-primary','font-bold');
+    });
+  }
+});
+const serviceButtons = document.querySelectorAll('#booking-section button.w-full.text-left');
+serviceButtons.forEach(btn => {
+  btn.addEventListener('click', function() {
+    serviceButtons.forEach(b => { b.classList.remove('border-primary','bg-on-primary'); b.classList.add('border-outline-variant'); });
+    this.classList.add('border-primary','bg-on-primary'); this.classList.remove('border-outline-variant');
+  });
+});
+</script>
+</body>
+</html>
