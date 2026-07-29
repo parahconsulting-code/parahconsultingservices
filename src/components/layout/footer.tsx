@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer className="bg-primary-container py-16 px-4 sm:px-6 md:px-16 grid grid-cols-1 md:grid-cols-4 gap-8 text-on-primary-container">
       <div className="col-span-1">
-        <img src="/images/logo-parah.png" alt="PARAH Consulting" className="h-10 mb-6" />
+        <img src="/images/logo-parah.png" alt="PARAH Consulting" width="160" height="40" className="h-10 w-auto mb-6" />
         <p className="opacity-80 mb-6 font-body">
           Votre partenaire stratégique pour l&apos;excellence opérationnelle et humaine en Afrique Centrale.
         </p>

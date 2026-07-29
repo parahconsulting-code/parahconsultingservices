@@ -6,6 +6,7 @@ export async function GET() {
     .from("test_passages")
     .select("id, scores, created_at, token_acces, participant:participants(nom, prenom, profession, niveau_etude, telephone, email), test:tests(titre, slug)")
     .order("created_at", { ascending: false })
+    .limit(5000)
 
   if (!passages || passages.length === 0) {
     return new NextResponse("Aucune donnée", { status: 200 })

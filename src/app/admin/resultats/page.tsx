@@ -1,24 +1,19 @@
 import { supabaseAdmin } from "@/lib/supabase/server"
 
 export default async function AdminResultatsPage() {
-  const { count: totalPassages } = await supabaseAdmin
-    .from("test_passages")
-    .select("*", { count: "exact", head: true })
+  const [{ count: totalPassages }, { count: totalParticipants }, testsResult, passagesResult] = await Promise.all([
+    supabaseAdmin.from("test_passages").select("*", { count: "exact", head: true }),
+    supabaseAdmin.from("participants").select("*", { count: "exact", head: true }),
+    supabaseAdmin.from("tests").select("id, titre"),
+    supabaseAdmin.from("test_passages").select("test_id", { count: "exact", head: false }),
+  ])
 
-  const { count: totalParticipants } = await supabaseAdmin
-    .from("participants")
-    .select("*", { count: "exact", head: true })
-
-  const { data: tests } = await supabaseAdmin.from("tests").select("id, titre")
+  const tests = testsResult.data || []
   const testCounts: Record<string, number> = {}
-  if (tests) {
-    for (const t of tests) {
-      const { count } = await supabaseAdmin
-        .from("test_passages")
-        .select("*", { count: "exact", head: true })
-        .eq("test_id", t.id)
-      testCounts[t.titre] = count || 0
-    }
+  for (const p of passagesResult.data || []) {
+    const tid = p.test_id as string
+    const test = tests.find((t: { id: string }) => t.id === tid)
+    if (test) testCounts[test.titre] = (testCounts[test.titre] || 0) + 1
   }
 
   const { data: recentPassages } = await supabaseAdmin

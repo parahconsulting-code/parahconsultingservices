@@ -101,7 +101,7 @@ export default function FormationsPage() {
               <p className="font-label mb-2 text-on-primary-container">Besoin d&apos;aide ?</p>
               <p className="mb-4 opacity-80 font-body">Nos conseillers vous orientent vers le meilleur parcours.</p>
               <Link
-                href="/rendez-vous"
+                href="/contact"
                 className="block w-full py-2 bg-on-primary text-primary font-bold text-center hover:bg-surface transition-colors"
               >
                 Contactez-nous

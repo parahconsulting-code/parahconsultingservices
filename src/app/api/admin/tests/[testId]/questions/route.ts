@@ -13,5 +13,7 @@ export async function GET(
     .eq("test_id", testId)
     .order("ordre")
 
-  return NextResponse.json(questions || [])
+  return NextResponse.json(questions || [], {
+    headers: { "Cache-Control": "public, max-age=300, s-maxage=600" },
+  })
 }

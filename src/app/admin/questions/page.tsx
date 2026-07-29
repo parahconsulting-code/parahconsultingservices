@@ -2,17 +2,19 @@ import Link from "next/link"
 import { supabaseAdmin } from "@/lib/supabase/server"
 
 export default async function AdminQuestionsPage() {
-  const { data: tests } = await supabaseAdmin.from("tests").select("id, slug, titre").order("titre")
+  const [testsResult, countsResult] = await Promise.all([
+    supabaseAdmin.from("tests").select("id, slug, titre").order("titre"),
+    supabaseAdmin.from("questions").select("test_id", { count: "exact", head: false }),
+  ])
 
-  const result = await Promise.all(
-    (tests || []).map(async (t) => {
-      const { count } = await supabaseAdmin
-        .from("questions")
-        .select("*", { count: "exact", head: true })
-        .eq("test_id", t.id)
-      return { ...t, question_count: count || 0 }
-    })
-  )
+  const tests = testsResult.data || []
+  const countMap: Record<string, number> = {}
+  for (const q of countsResult.data || []) {
+    const tid = q.test_id as string
+    countMap[tid] = (countMap[tid] || 0) + 1
+  }
+
+  const result = tests.map((t) => ({ ...t, question_count: countMap[t.id] || 0 }))
 
   const testIcons: Record<string, string> = {
     riasec: "radio_button_checked",

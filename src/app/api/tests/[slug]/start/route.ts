@@ -28,5 +28,7 @@ export async function GET(
     .eq("test_id", test.id)
     .order("ordre")
 
-  return NextResponse.json({ test, questions })
+  return NextResponse.json({ test, questions }, {
+    headers: { "Cache-Control": "public, max-age=300, s-maxage=600" },
+  })
 }

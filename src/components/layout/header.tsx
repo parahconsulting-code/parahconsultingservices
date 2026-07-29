@@ -10,7 +10,8 @@ const navLinks = [
   { href: "/services", label: "Services" },
   { href: "/formations", label: "Formations" },
   { href: "/tests", label: "Tests" },
-  { href: "/rendez-vous", label: "Rendez-vous" },
+  { href: "/a-propos", label: "À propos" },
+  { href: "/contact", label: "Contact" },
 ]
 
 export function Header() {
@@ -55,14 +56,11 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <a href="#contact" className="text-on-surface hover:text-secondary transition-colors duration-200">
-            Contact
-          </a>
         </nav>
 
         <div className="flex items-center gap-3">
           <Link
-            href="/rendez-vous"
+            href="/contact"
             className="bg-primary text-on-primary px-4 sm:px-6 py-2 font-label scale-95 active:scale-90 transition-transform text-sm sm:text-base"
           >
             Prendre RDV
@@ -97,13 +95,6 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href="#contact"
-              className="py-4 text-lg font-medium text-gray-800 hover:text-secondary transition-colors duration-200 border-b border-gray-100"
-              onClick={() => setMobileOpen(false)}
-            >
-              Contact
-            </a>
           </nav>
         </div>
       )}

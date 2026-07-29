@@ -48,7 +48,7 @@ export default function HomePage() {
           />
         </div>
         <div className="absolute top-8 left-6 md:left-16 z-10">
-          <img src="/images/logo-parah.png" alt="PARAH Consulting" className="h-12 md:h-16 opacity-90" />
+          <img src="/images/logo-parah.png" alt="PARAH Consulting" width="120" height="48" className="h-12 md:h-16 w-auto opacity-90" />
         </div>
         <div className="container mx-auto px-4 sm:px-6 md:px-16 relative z-10">
           <div className="max-w-3xl">
@@ -61,7 +61,7 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-up animate-delay-400">
               <Link
-                href="/rendez-vous"
+                href="/contact"
                 className="bg-secondary-container text-on-secondary px-8 py-4 font-label flex items-center justify-center gap-2 hover:opacity-90 hover:scale-105 transition-all duration-300"
               >
                 Prendre RDV <span className="material-symbols-outlined">calendar_today</span>
@@ -81,8 +81,8 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 md:px-16">
           <p className="text-center font-label text-outline mb-8 tracking-widest uppercase">ILS NOUS FONT CONFIANCE</p>
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-            <img src="/images/confiance-1.png" alt="Partenaire 1" className="h-20 md:h-24 w-auto object-contain animate-float" style={{ animationDelay: "0s" }} />
-            <img src="/images/confiance-2.png" alt="Partenaire 2" className="h-20 md:h-24 w-auto object-contain animate-float" style={{ animationDelay: "0.4s" }} />
+            <img src="/images/confiance-1.png" alt="Partenaire 1" width="160" height="64" loading="lazy" className="h-20 md:h-24 w-auto object-contain animate-float" style={{ animationDelay: "0s" }} />
+            <img src="/images/confiance-2.png" alt="Partenaire 2" width="160" height="64" loading="lazy" className="h-20 md:h-24 w-auto object-contain animate-float" style={{ animationDelay: "0.4s" }} />
           </div>
         </div>
       </AnimatedSection>

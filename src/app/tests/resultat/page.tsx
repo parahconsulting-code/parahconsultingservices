@@ -38,7 +38,7 @@ function ResultatContent() {
     <div className="min-h-screen flex items-center justify-center">
       <div className="text-center space-y-4">
         <p className="text-on-surface-variant">{error || "Résultats non disponibles"}</p>
-        <Link href="/rendez-vous"><Button variant="outline">Retour aux tests</Button></Link>
+        <Link href="/tests"><Button variant="outline">Retour aux tests</Button></Link>
       </div>
     </div>
   )
@@ -78,8 +78,8 @@ function ResultatContent() {
             </a>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link href="/rendez-vous"><Button variant="outline">Autres tests</Button></Link>
-            <Link href="/rendez-vous"><Button variant="ghost">Prendre rendez-vous</Button></Link>
+            <Link href="/tests"><Button variant="outline">Autres tests</Button></Link>
+            <Link href="/contact"><Button variant="ghost">Prendre rendez-vous</Button></Link>
           </div>
         </div>
       </div>

@@ -1,5 +1,4 @@
-"use client"
-
+import { memo } from "react"
 import { cn } from "@/lib/utils"
 import type { Question, QuestionOption } from "@/types"
 
@@ -9,7 +8,7 @@ interface QuestionCardProps {
   onSelect: (optionId: string) => void
 }
 
-export function QuestionCard({ question, selectedOptionId, onSelect }: QuestionCardProps) {
+export const QuestionCard = memo(function QuestionCard({ question, selectedOptionId, onSelect }: QuestionCardProps) {
   return (
     <div className="space-y-6 animate-fade-in">
       {question.dimension && (
@@ -38,4 +37,4 @@ export function QuestionCard({ question, selectedOptionId, onSelect }: QuestionC
       </div>
     </div>
   )
-}
+})

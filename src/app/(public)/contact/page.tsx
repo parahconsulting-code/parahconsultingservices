@@ -1,37 +1,6 @@
 "use client"
 
-import Link from "next/link"
 import { useState } from "react"
-
-const tests = [
-  {
-    title: "RIASEC Junior",
-    desc: "Conçu pour les élèves du secondaire (12-17 ans). Ce test identifie les types de personnalité dominants et suggère des parcours académiques adaptés aux aspirations précoces.",
-    duration: "15 min",
-    questions: "60",
-    badge: "Populaire",
-    href: "/tests/riasec-junior",
-    colSpan: "md:col-span-8",
-  },
-  {
-    title: "Intelligences Multiples",
-    desc: "Identifiez vos 8 formes d'intelligence dominantes pour mieux comprendre comment vous apprenez et collaborez.",
-    duration: "10 min",
-    questions: "40",
-    href: "/tests/intelligences-multiples",
-    colSpan: "md:col-span-4",
-  },
-  {
-    title: "RIASEC Adulte & Reconversion",
-    desc: "Analyse approfondie pour les professionnels en quête de sens ou de changement de carrière. Basé sur le modèle de Holland, ce test croise vos intérêts avec les réalités du marché du travail actuel.",
-    duration: "20 min",
-    questions: "60",
-    href: "/tests/riasec-adulte",
-    colSpan: "md:col-span-12",
-    features: ["Certification RH", "Rapport détaillé (PDF)", "Comparatif sectoriel"],
-    isWide: true,
-  },
-]
 
 const services = [
   { icon: "person_search", title: "Débriefing Test RIASEC", sub: "45 min • Entretien individuel" },
@@ -39,7 +8,7 @@ const services = [
   { icon: "history_edu", title: "Conseil en Orientation Scolaire", sub: "60 min • Parents & Élèves" },
 ]
 
-export default function RendezVousPage() {
+export default function ContactPage() {
   const [form, setForm] = useState({ service: "", nom: "", email: "", telephone: "", date_souhaitee: "", message: "" })
   const [submitting, setSubmitting] = useState(false)
   const [done, setDone] = useState(false)
@@ -68,87 +37,17 @@ export default function RendezVousPage() {
 
   return (
     <div className="pt-20 md:pt-32 pb-20 px-4 sm:px-6 md:px-16 max-w-[1280px] mx-auto w-full">
-      <header className="mb-16">
+      <header className="mb-12">
         <h1 className="text-[32px] md:text-5xl font-display font-bold text-primary mb-4 leading-tight">
-          Orientation & Carrière
+          Contact
         </h1>
         <p className="text-lg text-on-surface-variant max-w-2xl font-body leading-relaxed">
-          Découvrez votre potentiel à travers nos tests psychotechniques validés et réservez un accompagnement
-          personnalisé avec nos experts en ressources humaines.
+          Besoin d&apos;un accompagnement personnalisé ? Remplissez le formulaire ci-dessous et
+          nous vous recontacterons dans les plus brefs délais.
         </p>
       </header>
 
-      <section className="mb-24">
-        <div className="flex items-center gap-3 mb-8">
-          <span className="material-symbols-outlined text-secondary text-3xl">psychology</span>
-          <h2 className="text-[30px] font-headline font-semibold text-primary leading-tight">Tests d&apos;Orientation</h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-          {tests.map((test) => (
-            <div
-              key={test.title}
-              className={`${test.colSpan} group relative overflow-hidden border border-outline-variant bg-surface-container-lowest transition-all duration-300 hover:shadow-xl hover:border-secondary ${
-                test.isWide ? "flex flex-col md:flex-row" : ""
-              }`}
-            >
-              {test.isWide ? (
-                <>
-                  <div className="md:w-1/3 h-64 md:h-auto bg-cover bg-center bg-[#e0e3e5]" />
-                  <div className="p-8 md:w-2/3 flex flex-col justify-center">
-                    <h3 className="font-headline font-semibold text-xl mb-2">{test.title}</h3>
-                    <p className="text-on-surface-variant mb-6 font-body">{test.desc}</p>
-                    <div className="flex flex-wrap gap-6 mb-8">
-                      {test.features?.map((f) => (
-                        <div key={f} className="flex items-center gap-2">
-                          <span className="material-symbols-outlined text-secondary">verified</span>
-                          <span className="text-sm font-medium">{f}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <Link
-                      href={test.href}
-                      className="self-start flex items-center gap-2 bg-primary text-on-primary px-8 py-3 font-label transition-transform active:scale-95"
-                    >
-                      Évaluer mon profil <span className="material-symbols-outlined">trending_up</span>
-                    </Link>
-                  </div>
-                </>
-              ) : (
-                <div className="p-8 flex flex-col h-full">
-                  <div className="flex justify-between items-start mb-6">
-                    {test.badge && (
-                      <span className="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 text-xs font-bold tracking-wider uppercase">
-                        {test.badge}
-                      </span>
-                    )}
-                    <span className="material-symbols-outlined text-primary-fixed-dim text-5xl">school</span>
-                  </div>
-                  <h3 className="font-headline font-semibold text-xl mb-3">{test.title}</h3>
-                  <p className="text-on-surface-variant mb-8 flex-grow font-body">{test.desc}</p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex gap-4 text-sm text-on-surface-variant">
-                      <span className="flex items-center gap-1">
-                        <span className="material-symbols-outlined text-base">timer</span> {test.duration}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <span className="material-symbols-outlined text-base">task_alt</span> {test.questions} questions
-                      </span>
-                    </div>
-                    <Link
-                      href={test.href}
-                      className="flex items-center gap-2 bg-primary text-on-primary px-6 py-3 font-label transition-transform active:scale-95"
-                    >
-                      Démarrer le test <span className="material-symbols-outlined">arrow_forward</span>
-                    </Link>
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-surface-container-lowest border border-outline-variant overflow-hidden shadow-sm" id="booking-section">
+      <section className="bg-surface-container-lowest border border-outline-variant overflow-hidden shadow-sm">
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 lg:grid-cols-12">
             <div className="lg:col-span-5 p-8 md:p-12 border-b lg:border-b-0 lg:border-r border-outline-variant bg-surface-container-low">

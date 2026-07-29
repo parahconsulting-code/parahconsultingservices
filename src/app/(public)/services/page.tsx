@@ -72,7 +72,7 @@ export default function ServicesPage() {
                 ))}
               </div>
               <Link
-                href="/rendez-vous"
+                href="/contact"
                 className="bg-primary text-on-primary px-8 py-4 font-label hover:opacity-90 hover:scale-105 transition-all duration-300 inline-block"
               >
                 Demander un devis
@@ -221,7 +221,7 @@ export default function ServicesPage() {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link
-                href="/rendez-vous"
+                href="/contact"
                 className="bg-primary text-on-primary px-10 py-5 font-label hover:opacity-90 hover:scale-105 transition-all duration-300"
               >
                 Obtenir un devis personnalisé
