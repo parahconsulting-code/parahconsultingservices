@@ -47,9 +47,6 @@ export default function HomePage() {
             style={{ backgroundImage: "url('/images/hero-group.jpg')" }}
           />
         </div>
-        <div className="absolute top-8 left-6 md:left-16 z-10">
-          <img src="/images/logo-parah.png" alt="PARAH Consulting" width="120" height="48" className="h-12 md:h-16 w-auto opacity-90" />
-        </div>
         <div className="container mx-auto px-4 sm:px-6 md:px-16 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-[32px] md:text-5xl font-display font-bold text-white mb-6 leading-tight animate-fade-down">
