@@ -36,7 +36,7 @@ export function Header() {
           scrolled ? "py-2 shadow-sm" : "py-4"
         )}
       >
-        <Link href="/" className="font-bold text-xl md:text-2xl text-primary font-display">
+        <Link href="/" className="font-bold text-sm sm:text-base md:text-lg text-primary font-display whitespace-nowrap">
           PARAH Consulting &amp; Services
         </Link>
 
