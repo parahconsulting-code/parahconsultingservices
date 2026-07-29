@@ -81,6 +81,9 @@ export function Header() {
         <div className="fixed inset-0 z-50 md:hidden">
           <div className="absolute inset-0 bg-black/60" onClick={() => setMobileOpen(false)} />
           <nav className="absolute top-0 left-0 h-full w-72 max-w-[80vw] bg-white shadow-2xl flex flex-col pt-24 pb-8 px-6 overflow-y-auto">
+            <div className="mb-6 px-2">
+              <img src="/images/logo-header.png" alt="PARAH Consulting" width="160" height="52" className="h-10 w-auto" />
+            </div>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
