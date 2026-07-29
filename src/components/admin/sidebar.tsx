@@ -6,6 +6,8 @@ import { useState } from "react"
 
 const navItems = [
   { href: "/admin", label: "Dashboard", icon: "dashboard" },
+  { href: "/admin/formations", label: "Formations", icon: "school" },
+  { href: "/admin/inscriptions", label: "Inscriptions", icon: "assignment" },
   { href: "/admin/questions", label: "Questions", icon: "quiz" },
   { href: "/admin/resultats", label: "Résultats", icon: "bar_chart" },
   { href: "/admin/rendez-vous", label: "Rendez-vous", icon: "event_available" },
