@@ -6,12 +6,12 @@ import { AnimatedSection } from "@/components/ui/animated-section"
 export default function ServicesPage() {
   return (
     <>
-      <section className="relative h-[614px] flex items-center overflow-hidden bg-gradient-to-br from-[#131b2e] to-black">
+      <section className="relative h-[420px] md:h-[614px] flex items-center overflow-hidden bg-gradient-to-br from-[#131b2e] to-black">
         <div
           className="absolute inset-0 opacity-40 bg-cover bg-center"
           style={{ backgroundImage: "url('/images/dg-micro.jpg')" }}
         />
-        <div className="relative container mx-auto px-6 md:px-16 z-10">
+        <div className="relative container mx-auto px-4 sm:px-6 md:px-16 z-10">
           <div className="max-w-3xl">
             <h1 className="text-[32px] md:text-5xl font-display font-bold text-white mb-6 leading-tight animate-fade-down">
               Expertise, Fiabilité et Transformation Stratégique.
@@ -31,8 +31,8 @@ export default function ServicesPage() {
       </section>
 
       <AnimatedSection animation="slide-left" className="py-24 bg-white border-b border-outline-variant" id="consulting">
-        <div className="container mx-auto px-6 md:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="container mx-auto px-4 sm:px-6 md:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
             <div>
               <span className="text-secondary font-label tracking-widest uppercase mb-4 block">Pilier 01</span>
               <h2 className="text-[30px] md:text-5xl font-display font-bold text-primary mb-6 leading-tight">
@@ -90,7 +90,7 @@ export default function ServicesPage() {
       </AnimatedSection>
 
       <AnimatedSection className="py-24 bg-surface-bright" id="operationnel">
-        <div className="container mx-auto px-6 md:px-16">
+        <div className="container mx-auto px-4 sm:px-6 md:px-16">
           <div className="text-center max-w-2xl mx-auto mb-16 animate-fade-up">
             <span className="text-secondary font-label tracking-widest uppercase mb-4 block">Pilier 02</span>
             <h2 className="text-[30px] md:text-5xl font-display font-bold text-primary mb-4 leading-tight">
@@ -153,8 +153,8 @@ export default function ServicesPage() {
       </AnimatedSection>
 
       <AnimatedSection animation="fade-up" className="py-24 bg-primary text-on-primary" id="humain">
-        <div className="container mx-auto px-6 md:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        <div className="container mx-auto px-4 sm:px-6 md:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 items-center">
             <div className="lg:col-span-5">
               <span className="text-secondary-fixed-dim font-label tracking-widest uppercase mb-4 block">Pilier 03</span>
               <h2 className="text-[30px] md:text-5xl font-display font-bold mb-6 leading-tight">Capital Humain</h2>
@@ -209,7 +209,7 @@ export default function ServicesPage() {
       </AnimatedSection>
 
       <AnimatedSection animation="fade-up" className="py-24 bg-surface">
-        <div className="container mx-auto px-6 md:px-16">
+        <div className="container mx-auto px-4 sm:px-6 md:px-16">
           <div className="bg-white border border-outline-variant p-12 md:p-20 text-center relative overflow-hidden transition-all duration-500 hover:shadow-xl">
             <div className="absolute top-0 left-0 w-1 h-full bg-secondary" />
             <h2 className="text-[30px] font-headline font-semibold mb-6 leading-tight">

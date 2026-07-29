@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer className="bg-primary-container py-16 px-6 md:px-16 grid grid-cols-1 md:grid-cols-4 gap-gutter text-on-primary-container">
+    <footer className="bg-primary-container py-16 px-4 sm:px-6 md:px-16 grid grid-cols-1 md:grid-cols-4 gap-8 text-on-primary-container">
       <div className="col-span-1">
         <img src="/images/logo-parah.png" alt="PARAH Consulting" className="h-10 mb-6" />
         <p className="opacity-80 mb-6 font-body">
@@ -80,9 +80,9 @@ export function Footer() {
       </div>
       <div>
         <h4 className="font-label uppercase tracking-widest text-white mb-6">Contact</h4>
-        <p className="opacity-80 mb-4 font-body">Brazzaville, République du Congo</p>
-        <p className="opacity-80 mb-4 font-body">contact@parahconsulting.com</p>
-        <p className="opacity-80 font-body">+242 06 000 00 00</p>
+        <p className="opacity-80 mb-4 font-body">1567, Rue Noumbi, Plateaux des 15 ans, derrière l'école 8 Mars<br />Brazzaville, République du Congo</p>
+        <p className="opacity-80 mb-4 font-body">parahconsulting@gmail.com</p>
+        <p className="opacity-80 font-body">00242 04 434 33 33</p>
       </div>
       <div className="col-span-1 md:col-span-4 pt-12 mt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
         <p className="opacity-60 font-body">&copy; 2024 PARAH Consulting & Services. All rights reserved.</p>

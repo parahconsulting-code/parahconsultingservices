@@ -48,7 +48,7 @@ const formations = [
 
 export default function FormationsPage() {
   return (
-    <div className="pt-32 pb-24 px-6 md:px-16 max-w-[1280px] mx-auto">
+    <div className="pt-20 md:pt-32 pb-24 px-4 sm:px-6 md:px-16 max-w-[1280px] mx-auto">
       <header className="mb-16 animate-fade-down">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
@@ -60,7 +60,7 @@ export default function FormationsPage() {
               demain.
             </p>
           </div>
-          <div className="flex items-center gap-4 text-on-surface-variant bg-surface-container p-1">
+          <div className="flex items-center gap-4 text-on-surface-variant bg-surface-container p-1 flex-wrap">
             {["Tous", "Certification", "Workshop"].map((filter) => (
               <button
                 key={filter}

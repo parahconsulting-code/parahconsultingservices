@@ -40,7 +40,7 @@ function CountUp({ target, suffix = "" }: { target: number; suffix?: string }) {
 export default function HomePage() {
   return (
     <>
-      <section className="relative h-[921px] min-h-[600px] flex items-center overflow-hidden">
+      <section className="relative h-[500px] md:h-[921px] min-h-[500px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-black/85 via-[#131b2e]/40 to-black/85">
           <div
             className="absolute inset-0 opacity-40 bg-cover bg-center"
@@ -50,7 +50,7 @@ export default function HomePage() {
         <div className="absolute top-8 left-6 md:left-16 z-10">
           <img src="/images/logo-parah.png" alt="PARAH Consulting" className="h-12 md:h-16 opacity-90" />
         </div>
-        <div className="container mx-auto px-6 md:px-16 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 md:px-16 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-[32px] md:text-5xl font-display font-bold text-white mb-6 leading-tight animate-fade-down">
               Transformez vos idées en <span className="text-secondary-fixed">projets viables</span>.
@@ -78,7 +78,7 @@ export default function HomePage() {
       </section>
 
       <AnimatedSection animation="fade-up" className="py-12 bg-surface-container-low border-b border-outline-variant">
-        <div className="container mx-auto px-6 md:px-16">
+        <div className="container mx-auto px-4 sm:px-6 md:px-16">
           <p className="text-center font-label text-outline mb-8 tracking-widest uppercase">ILS NOUS FONT CONFIANCE</p>
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
             <img src="/images/confiance-1.png" alt="Partenaire 1" className="h-14 md:h-16 w-auto object-contain animate-float" style={{ animationDelay: "0s" }} />
@@ -88,7 +88,7 @@ export default function HomePage() {
       </AnimatedSection>
 
       <AnimatedSection animation="fade-up" className="py-24 bg-surface">
-        <div className="container mx-auto px-6 md:px-16">
+        <div className="container mx-auto px-4 sm:px-6 md:px-16">
           <div className="mb-16 max-w-2xl animate-fade-up">
             <h2 className="text-3xl md:text-[30px] font-headline font-semibold text-primary mb-4 leading-tight">
               Nos Piliers d&apos;Accompagnement
@@ -139,7 +139,7 @@ export default function HomePage() {
       </AnimatedSection>
 
       <AnimatedSection className="py-20 bg-primary-container text-white overflow-hidden relative">
-        <div className="container mx-auto px-6 md:px-16 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 md:px-16 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
             {[
               { value: 120, suffix: "+", label: "Clients Accompagnés" },
@@ -157,7 +157,7 @@ export default function HomePage() {
       </AnimatedSection>
 
       <AnimatedSection animation="fade-up" className="py-24 bg-surface-container-lowest">
-        <div className="container mx-auto px-6 md:px-16">
+        <div className="container mx-auto px-4 sm:px-6 md:px-16">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-[30px] font-headline font-semibold text-primary mb-4 leading-tight">
               Ce que disent nos partenaires
@@ -204,7 +204,7 @@ export default function HomePage() {
       </AnimatedSection>
 
       <AnimatedSection animation="fade-up" className="py-24 bg-white border-t border-outline-variant">
-        <div className="container mx-auto px-6 md:px-16">
+        <div className="container mx-auto px-4 sm:px-6 md:px-16">
           <div className="bg-primary-container p-12 md:p-20 relative overflow-hidden flex flex-col md:flex-row items-center gap-12">
             <div className="absolute left-0 bottom-0 w-64 h-64 bg-secondary-container/20 blur-3xl rounded-full animate-float" />
             <div className="flex-1 relative z-10">

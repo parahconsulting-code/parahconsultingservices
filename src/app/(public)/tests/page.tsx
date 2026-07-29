@@ -32,7 +32,7 @@ const targetLabels: Record<string, string> = {
 
 export default function TestsPage() {
   return (
-    <div className="pt-32 pb-20 px-6 md:px-16 max-w-[1280px] mx-auto w-full">
+    <div className="pt-20 md:pt-32 pb-20 px-4 sm:px-6 md:px-16 max-w-[1280px] mx-auto w-full">
       <AnimatedSection animation="fade-down" as="div" className="mb-16">
         <h1 className="text-[32px] md:text-5xl font-display font-bold text-primary mb-4 leading-tight">
           Tests d&apos;Orientation

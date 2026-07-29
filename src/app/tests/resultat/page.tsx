@@ -72,12 +72,12 @@ function ResultatContent() {
         )}
 
         <div className="bg-surface-container-low p-6 rounded-2xl border border-border text-center space-y-3">
-          <div className="flex gap-3 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a href={`/api/pdf?token=${token}`}>
               <Button>Télécharger le rapport PDF</Button>
             </a>
           </div>
-          <div className="flex gap-3 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link href="/rendez-vous"><Button variant="outline">Autres tests</Button></Link>
             <Link href="/rendez-vous"><Button variant="ghost">Prendre rendez-vous</Button></Link>
           </div>

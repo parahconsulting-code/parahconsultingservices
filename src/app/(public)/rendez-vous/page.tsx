@@ -67,7 +67,7 @@ export default function RendezVousPage() {
   }
 
   return (
-    <div className="pt-32 pb-20 px-6 md:px-16 max-w-[1280px] mx-auto w-full">
+    <div className="pt-20 md:pt-32 pb-20 px-4 sm:px-6 md:px-16 max-w-[1280px] mx-auto w-full">
       <header className="mb-16">
         <h1 className="text-[32px] md:text-5xl font-display font-bold text-primary mb-4 leading-tight">
           Orientation & Carrière

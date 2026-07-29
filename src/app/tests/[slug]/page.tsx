@@ -62,7 +62,7 @@ export default function TestPage() {
           setStarted(true)
         }} className="space-y-4 bg-white p-6 rounded-2xl border border-border">
           <h2 className="text-lg font-heading font-semibold">Vos informations</h2>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-1">
               <label className="text-sm font-medium">Prénom *</label>
               <input required value={form.prenom} onChange={(e) => setForm({ ...form, prenom: e.target.value })}
@@ -93,7 +93,7 @@ export default function TestPage() {
               <option value="doctorat">Doctorat (Bac+8)</option>
             </select>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-1">
               <label className="text-sm font-medium">Téléphone</label>
               <input type="tel" value={form.telephone} onChange={(e) => setForm({ ...form, telephone: e.target.value })}
