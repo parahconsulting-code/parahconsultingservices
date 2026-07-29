@@ -2,21 +2,21 @@ import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer className="bg-primary-container py-16 px-4 sm:px-6 md:px-16 grid grid-cols-1 md:grid-cols-4 gap-8 text-on-primary-container">
+    <footer className="bg-primary-container py-16 px-4 sm:px-6 md:px-16 grid grid-cols-1 md:grid-cols-4 gap-8 text-white">
       <div className="col-span-1">
         <img src="/images/logo-footer.png" alt="PARAH Consulting" width="200" height="64" className="h-14 w-auto mb-6" />
-        <p className="opacity-80 mb-6 font-body">
+        <p className="mb-6 font-body">
           Votre partenaire stratégique pour l&apos;excellence opérationnelle et humaine en Afrique Centrale.
         </p>
         <div className="flex gap-4">
           <a
-            className="w-10 h-10 border border-on-primary-container/20 flex items-center justify-center hover:bg-secondary transition-colors"
+            className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-secondary transition-colors"
             href="#"
           >
             <span className="material-symbols-outlined text-sm">public</span>
           </a>
           <a
-            className="w-10 h-10 border border-on-primary-container/20 flex items-center justify-center hover:bg-secondary transition-colors"
+            className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-secondary transition-colors"
             href="#"
           >
             <span className="material-symbols-outlined text-sm">mail</span>
@@ -27,27 +27,27 @@ export function Footer() {
         <h4 className="font-label uppercase tracking-widest text-white mb-6">Expertise</h4>
         <ul className="space-y-4 font-body">
           <li>
-            <Link className="opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-opacity" href="/services">
+            <Link className="hover:text-secondary-fixed transition-colors" href="/services">
               Audit Stratégique
             </Link>
           </li>
           <li>
-            <Link className="opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-opacity" href="/services">
+            <Link className="hover:text-secondary-fixed transition-colors" href="/services">
               Sourcing International
             </Link>
           </li>
           <li>
-            <Link className="opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-opacity" href="/formations">
+            <Link className="hover:text-secondary-fixed transition-colors" href="/formations">
               Formation Continue
             </Link>
           </li>
           <li>
-            <Link className="opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-opacity" href="/tests">
+            <Link className="hover:text-secondary-fixed transition-colors" href="/tests">
               Tests d&apos;Orientation
             </Link>
           </li>
           <li>
-            <Link className="opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-opacity" href="/services">
+            <Link className="hover:text-secondary-fixed transition-colors" href="/services">
               Coaching Dirigeant
             </Link>
           </li>
@@ -57,22 +57,22 @@ export function Footer() {
         <h4 className="font-label uppercase tracking-widest text-white mb-6">Entreprise</h4>
         <ul className="space-y-4 font-body">
           <li>
-            <a className="opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-opacity" href="#">
+            <a className="hover:text-secondary-fixed transition-colors" href="#">
               À Propos
             </a>
           </li>
           <li>
-            <a className="opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-opacity" href="#">
+            <a className="hover:text-secondary-fixed transition-colors" href="#">
               Blog & Actualités
             </a>
           </li>
           <li>
-            <a className="opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-opacity" href="#">
+            <a className="hover:text-secondary-fixed transition-colors" href="#">
               Carrières
             </a>
           </li>
           <li>
-            <a className="opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-opacity" href="#">
+            <a className="hover:text-secondary-fixed transition-colors" href="#">
               FAQ
             </a>
           </li>
@@ -80,9 +80,9 @@ export function Footer() {
       </div>
       <div>
         <h4 className="font-label uppercase tracking-widest text-white mb-6">Contact</h4>
-        <p className="opacity-80 mb-4 font-body">1567, Rue Noumbi, Plateaux des 15 ans, derrière l'école 8 Mars<br />Brazzaville, République du Congo</p>
-        <p className="opacity-80 mb-4 font-body">parahconsulting@gmail.com</p>
-        <p className="opacity-80 font-body">00242 04 434 33 33</p>
+        <p className="mb-4 font-body">1567, Rue Noumbi, Plateaux des 15 ans, derrière l'école 8 Mars<br />Brazzaville, République du Congo</p>
+        <p className="mb-4 font-body">parahconsulting@gmail.com</p>
+        <p className="font-body">00242 04 434 33 33</p>
       </div>
       <div className="col-span-1 md:col-span-4 pt-12 mt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
         <p className="opacity-60 font-body">&copy; 2024 PARAH Consulting & Services. All rights reserved.</p>

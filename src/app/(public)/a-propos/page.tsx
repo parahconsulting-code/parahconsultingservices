@@ -51,29 +51,29 @@ export default function AProposPage() {
           ))}
         </div>
 
-        <div className="bg-primary-container p-10 md:p-14 text-on-primary-container">
+        <div className="bg-primary-container p-10 md:p-14 text-white">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div>
               <h3 className="text-2xl font-headline font-semibold text-white mb-4">Nos Coordonnées</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <span className="material-symbols-outlined text-secondary-fixed">location_on</span>
-                  <p className="font-body opacity-80">1567, Rue Noumbi, Plateaux des 15 ans, derrière l&apos;école 8 Mars<br />Brazzaville, République du Congo</p>
+                  <p className="font-body">1567, Rue Noumbi, Plateaux des 15 ans, derrière l&apos;école 8 Mars<br />Brazzaville, République du Congo</p>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="material-symbols-outlined text-secondary-fixed">mail</span>
-                  <p className="font-body opacity-80">parahconsulting@gmail.com</p>
+                  <p className="font-body">parahconsulting@gmail.com</p>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="material-symbols-outlined text-secondary-fixed">call</span>
-                  <p className="font-body opacity-80">00242 04 434 33 33</p>
+                  <p className="font-body">00242 04 434 33 33</p>
                 </div>
               </div>
             </div>
             <div className="bg-white/10 p-8 text-center">
               <span className="material-symbols-outlined text-5xl text-secondary-fixed mb-4">support_agent</span>
               <h4 className="font-headline font-semibold text-lg text-white mb-2">Besoin d&apos;accompagnement ?</h4>
-              <p className="opacity-80 font-body mb-6">Nos experts sont à votre écoute pour analyser vos besoins.</p>
+              <p className="font-body mb-6">Nos experts sont à votre écoute pour analyser vos besoins.</p>
               <a href="/contact" className="inline-block bg-secondary text-white px-8 py-3 font-label hover:opacity-90 transition-opacity">
                 Prendre rendez-vous
               </a>
