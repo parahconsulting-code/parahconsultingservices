@@ -44,6 +44,37 @@ export default function AdminRendezVousPage() {
     load()
   }
 
+  function addToCalendar(a: Appointment) {
+    const dateStr = a.date_souhaitee || a.created_at
+    const d = new Date(dateStr)
+    const start = d.toISOString().replace(/[-:]/g, "").split(".")[0] + "Z"
+    const end = new Date(d.getTime() + 60 * 60 * 1000).toISOString().replace(/[-:]/g, "").split(".")[0] + "Z"
+    const now = new Date().toISOString().replace(/[-:]/g, "").split(".")[0] + "Z"
+    const ics = [
+      "BEGIN:VCALENDAR",
+      "VERSION:2.0",
+      "PRODID:-//PARAH Consulting//FR",
+      "BEGIN:VEVENT",
+      "DTSTART:" + start,
+      "DTEND:" + end,
+      "DTSTAMP:" + now,
+      "UID:" + a.id + "@parahconsulting.com",
+      "SUMMARY:Rendez-vous " + a.service + " - " + a.nom,
+      "DESCRIPTION:Client: " + a.nom + "\\nEmail: " + a.email + (a.telephone ? "\\nTél: " + a.telephone : "") + (a.message ? "\\nMessage: " + a.message : ""),
+      "LOCATION:1567 Rue Noumbi, Brazzaville",
+      "STATUS:CONFIRMED",
+      "END:VEVENT",
+      "END:VCALENDAR",
+    ].join("\r\n")
+    const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" })
+    const url = URL.createObjectURL(blob)
+    const aEl = document.createElement("a")
+    aEl.href = url
+    aEl.download = "rdv-" + a.id + ".ics"
+    aEl.click()
+    URL.revokeObjectURL(url)
+  }
+
   useEffect(() => { load() }, [])
 
   const statusConfig: Record<string, { label: string; bg: string; dot: string }> = {
@@ -145,10 +176,17 @@ export default function AdminRendezVousPage() {
                             </>
                           )}
                           {a.statut === "confirmé" && (
-                            <button onClick={() => updateStatus(a.id, "annulé")}
-                              className="px-2.5 py-1.5 text-xs font-medium rounded-md bg-red-50 text-red-700 hover:bg-red-100 border border-red-200 transition-colors">
-                              Annuler
-                            </button>
+                            <>
+                              <button onClick={() => addToCalendar(a)}
+                                className="px-2.5 py-1.5 text-xs font-medium rounded-md text-blue-700 hover:bg-blue-50 border border-blue-200 hover:border-blue-300 transition-colors flex items-center gap-1">
+                                <span className="material-symbols-outlined text-sm">calendar_month</span>
+                                Agenda
+                              </button>
+                              <button onClick={() => updateStatus(a.id, "annulé")}
+                                className="px-2.5 py-1.5 text-xs font-medium rounded-md bg-red-50 text-red-700 hover:bg-red-100 border border-red-200 transition-colors">
+                                Annuler
+                              </button>
+                            </>
                           )}
                           {a.statut === "annulé" && (
                             <button onClick={() => updateStatus(a.id, "en_attente")}

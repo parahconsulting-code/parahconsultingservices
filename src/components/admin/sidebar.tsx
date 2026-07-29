@@ -18,8 +18,8 @@ export function AdminSidebar({ email }: { email: string }) {
   const sidebarContent = (
     <div className="w-64 bg-[#1a1f36] text-white flex flex-col h-full">
       <div className="px-6 py-8 border-b border-white/10">
-        <Link href="/admin" className="text-xl font-bold font-display tracking-tight" onClick={() => setMobileOpen(false)}>
-          PARAH<span className="text-[#4f7cff]">.</span>
+        <Link href="/admin" onClick={() => setMobileOpen(false)}>
+          <img src="/images/logo-footer.png" alt="PARAH Consulting" width="160" height="52" className="h-10 w-auto" />
         </Link>
         <p className="text-xs text-white/40 mt-1">Espace Administration</p>
       </div>

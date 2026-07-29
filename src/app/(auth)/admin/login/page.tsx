@@ -32,12 +32,10 @@ export default function AdminLoginPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#1a1f36] via-[#1a1f36] to-[#2d3250] flex items-center justify-center px-4">
       <div className="w-full max-w-md">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-white font-display">
-            PARAH<span className="text-[#4f7cff]">.</span>
-          </h1>
-          <p className="text-white/50 mt-2 text-sm">Espace Administration</p>
-        </div>
+          <div className="text-center mb-8">
+            <img src="/images/logo-footer.png" alt="PARAH Consulting" width="200" height="64" className="h-12 w-auto mx-auto" />
+            <p className="text-white/50 mt-2 text-sm">Espace Administration</p>
+          </div>
 
         <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-2xl p-8 space-y-6">
           <div className="text-center space-y-1">
