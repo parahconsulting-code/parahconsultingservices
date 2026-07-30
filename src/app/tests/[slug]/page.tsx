@@ -51,8 +51,8 @@ export default function TestPage() {
         <div className="text-center space-y-2">
           <h1 className="text-3xl font-heading font-bold text-on-surface">{meta.titre}</h1>
           <p className="text-on-surface-variant">{meta.description}</p>
-          {meta.duree_min && (
-            <p className="text-sm text-on-surface-variant">Durée estimée : {meta.duree_min} min · {questions.length} questions</p>
+          {questions.length > 0 && (
+            <p className="text-sm text-on-surface-variant">{questions.length} questions</p>
           )}
         </div>
 

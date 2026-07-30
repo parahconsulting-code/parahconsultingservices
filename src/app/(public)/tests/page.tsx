@@ -77,17 +77,13 @@ export default function TestsPage() {
                   {test.description}
                 </p>
 
-                <div className="flex items-center justify-between pt-4 border-t border-outline-variant">
-                  <div className="flex gap-4 text-sm text-on-surface-variant">
-                    <span className="flex items-center gap-1">
-                      <span className="material-symbols-outlined text-base">timer</span>
-                      {test.duree_min} min
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <span className="material-symbols-outlined text-base">task_alt</span>
-                      {questionCounts[test.slug]} questions
-                    </span>
-                  </div>
+                  <div className="flex items-center justify-between pt-4 border-t border-outline-variant">
+                    <div className="flex gap-4 text-sm text-on-surface-variant">
+                      <span className="flex items-center gap-1">
+                        <span className="material-symbols-outlined text-base">task_alt</span>
+                        {questionCounts[test.slug]} questions
+                      </span>
+                    </div>
                   <Link
                     href={`/tests/${test.slug}`}
                     className="flex items-center gap-2 bg-primary text-on-primary px-5 py-2.5 font-label text-sm transition-all duration-300 hover:opacity-90 active:scale-95"
